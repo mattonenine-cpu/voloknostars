@@ -895,6 +895,7 @@
     <div class="catalog-tabs reveal" id="catalogTabs">
   <button class="catalog-tab active" data-type="kit" type="button">Комплекты «Звёздное небо»</button>
   <button class="catalog-tab" data-type="lamp" type="button">Светодиодные светильники</button>
+  <button class="catalog-tab" data-type="car" type="button">Для автомобиля</button>
 </div>
 
     <div class="catalog-banner reveal">
@@ -1222,6 +1223,7 @@
 
 <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg><span id="toastText">Готово</span></div>
 
+<script src="./catalog-ozon.js"></script>
 <script>
 (function(){
   "use strict";
@@ -1325,22 +1327,33 @@
   }
 
   var currentModalProduct = null;
+  function hasProductPrice(product){ return typeof product.price === 'number' && isFinite(product.price) && product.price > 0; }
+  function escapeProductText(value){
+    return String(value == null ? '' : value).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; });
+  }
+  function safeProductImage(value){
+    if(typeof value !== 'string' || !value.trim()) return '';
+    try { var url = new URL(value, location.href); return /^https?:$/.test(url.protocol) ? url.href : ''; } catch(e){ return ''; }
+  }
+  function requestProductQuote(){ window.location.href = 'tel:+79112394045'; }
   function openProductModal(product){
     currentModalProduct = product;
     document.getElementById('modalTitle').textContent = product.name;
     document.getElementById('modalDesc').textContent = product.desc;
-    var specsHtml = product.specs.map(function(s){ return '<li><span>'+s[0]+'</span><span>'+s[1]+'</span></li>'; }).join('');
+    var specsHtml = (product.specs || []).map(function(s){ return '<li><span>'+escapeProductText(s[0])+'</span><span>'+escapeProductText(s[1]).replace(/&lt;br\s*\/?&gt;/gi, '<br>')+'</span></li>'; }).join('');
     document.getElementById('modalSpecs').innerHTML = specsHtml;
-    var priceHtml = (product.oldPrice ? '<span class="price-old">'+fmt(product.oldPrice)+'</span>' : '') + fmt(product.price);
+    var priceHtml = hasProductPrice(product) ? (product.oldPrice ? '<span class="price-old">'+fmt(product.oldPrice)+'</span>' : '') + fmt(product.price) : 'Цена по запросу';
     document.getElementById('modalPrice').innerHTML = priceHtml;
+    document.getElementById('modalAddBtn').textContent = hasProductPrice(product) ? 'Добавить в корзину' : 'Уточнить цену';
     openModal(productModal);
     var modalCanvasEl = document.getElementById('modalCanvas');
     var modalImageEl = document.getElementById('modalImage');
-    modalCanvasEl.closest('.modal-media').classList.toggle('night', !product.image);
-    if(product.image){
+    var imageUrl = safeProductImage(product.image) || safeProductImage((product.images || [])[0]);
+    modalCanvasEl.closest('.modal-media').classList.toggle('night', !imageUrl);
+    if(imageUrl){
       if(modalCanvasField){ modalCanvasField.destroy(); modalCanvasField = null; }
       modalCanvasEl.style.display = 'none';
-      modalImageEl.src = product.image;
+      modalImageEl.src = imageUrl;
       modalImageEl.alt = product.name;
       modalImageEl.style.display = 'block';
     } else {
@@ -1348,6 +1361,29 @@
       modalCanvasEl.style.display = 'block';
       initModalCanvas(product.colors, product.twinkleSpeed);
     }
+    var gallery = document.getElementById('modalGallery');
+    if(!gallery){
+      gallery = document.createElement('div'); gallery.id = 'modalGallery';
+      gallery.setAttribute('aria-label', 'Фотографии товара');
+      gallery.style.cssText = 'display:flex;gap:8px;overflow-x:auto;padding:10px 0;';
+      document.getElementById('modalTitle').parentNode.appendChild(gallery);
+    }
+    gallery.replaceChildren();
+    var images = [product.image].concat(product.images || []).map(safeProductImage).filter(function(url, i, all){ return url && all.indexOf(url) === i; });
+    gallery.style.display = images.length > 1 ? 'flex' : 'none';
+    images.forEach(function(url, i){
+      var button = document.createElement('button'); button.type = 'button';
+      button.setAttribute('aria-label', 'Фотография ' + (i+1));
+      button.setAttribute('aria-pressed', String(i === 0));
+      button.style.cssText = 'flex:0 0 64px;width:64px;height:64px;padding:3px;border:1px solid #b3812f;border-radius:8px;background:transparent;cursor:pointer;';
+      var image = document.createElement('img'); image.src = url; image.alt = product.name + ' — фото ' + (i+1); image.loading = 'lazy';
+      image.style.cssText = 'width:100%;height:100%;object-fit:contain;'; button.appendChild(image);
+      button.addEventListener('click', function(){
+        modalImageEl.src = url; modalImageEl.alt = image.alt;
+        gallery.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', String(b === button)); });
+      });
+      gallery.appendChild(button);
+    });
   }
 
   /* ===================== PRODUCTS ===================== */
@@ -2097,6 +2133,7 @@
     }
   ];
 
+  if(window.applyOzonCatalog) window.applyOzonCatalog(PRODUCTS);
   var productGrid = document.getElementById('productGrid');
   var productsById = {};
   PRODUCTS.forEach(function(p){ productsById[p.id] = p; });
@@ -2107,25 +2144,27 @@
     el.style.setProperty('--d', delay+'s');
     el.setAttribute('data-id', product.id);
     el.setAttribute('data-type', product.type || 'kit');
-    var discount = product.oldPrice ? Math.round(100 - (product.price/product.oldPrice*100)) : null;
-    var media = product.image
-      ? '<img src="'+product.image+'" alt="'+product.name+'" loading="lazy" decoding="async">'
+    var priced = hasProductPrice(product);
+    var discount = priced && product.oldPrice ? Math.round(100 - (product.price/product.oldPrice*100)) : null;
+    var imageUrl = safeProductImage(product.image) || safeProductImage((product.images || [])[0]);
+    var media = imageUrl
+      ? '<img src="'+escapeProductText(imageUrl)+'" alt="'+escapeProductText(product.name)+'" loading="lazy" decoding="async">'
       : '<canvas></canvas>';
     el.innerHTML =
-      '<div class="card-media'+(product.image ? '' : ' night')+'">'+(discount!==null ? '<span class="card-badge sale">-'+discount+'%</span>' : '')+media+'</div>'+
+      '<div class="card-media'+(imageUrl ? '' : ' night')+'">'+(discount!==null ? '<span class="card-badge sale">-'+discount+'%</span>' : '')+media+'</div>'+
       '<div class="card-body">'+
-        '<h3>'+product.name+'</h3>'+
-        '<p class="desc">'+product.desc+'</p>'+
+        '<h3>'+escapeProductText(product.name)+'</h3>'+
+        '<p class="desc">'+escapeProductText(product.desc)+'</p>'+
         '<div class="card-foot">'+
-          '<div class="price">'+(product.oldPrice ? '<span class="price-old">'+fmt(product.oldPrice)+'</span>' : '')+fmt(product.price)+'</div>'+
+          '<div class="price">'+(priced ? (product.oldPrice ? '<span class="price-old">'+fmt(product.oldPrice)+'</span>' : '')+fmt(product.price) : 'Цена по запросу')+'</div>'+
           '<div class="card-btns">'+
-            '<button class="icon-square" data-add="'+product.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg></button>'+
-            '<button class="icon-square" data-open="'+product.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg></button>'+
+            (priced ? '<button class="icon-square" aria-label="Добавить в корзину" data-add="'+escapeProductText(product.id)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg></button>' : '<button class="btn btn-gold" type="button" data-quote="'+escapeProductText(product.id)+'" style="padding:10px 12px;font-size:12px;">Уточнить цену</button>')+
+            '<button class="icon-square" aria-label="Подробнее о товаре" data-open="'+escapeProductText(product.id)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg></button>'+
           '</div>'+
         '</div>'+
       '</div>';
     productGrid.appendChild(el);
-    if(!product.image){
+    if(!imageUrl){
       StarField(el.querySelector('canvas'), {density:0.00045, maxRadius:1.6, colors:product.colors, twinkleSpeed:product.twinkleSpeed});
     }
   }
@@ -2179,8 +2218,9 @@
   }
 
   /* ===================== CATALOG FILTERS ===================== */
-  var PRICE_MIN = Math.min.apply(null, PRODUCTS.map(function(p){ return p.price; }));
-  var PRICE_MAX = Math.max.apply(null, PRODUCTS.map(function(p){ return p.price; }));
+  var catalogPrices = PRODUCTS.filter(hasProductPrice).map(function(p){ return p.price; });
+  var PRICE_MIN = catalogPrices.length ? Math.min.apply(null, catalogPrices) : 0;
+  var PRICE_MAX = catalogPrices.length ? Math.max.apply(null, catalogPrices) : 1;
   var priceMinInput = document.getElementById('priceMin');
   var priceMaxInput = document.getElementById('priceMax');
   var priceTrackFill = document.getElementById('priceTrackFill');
@@ -2259,7 +2299,7 @@ document.getElementById('lampFilters').style.display  = (currentCatalogType === 
   var pType = product.type || 'kit';
   if(pType !== currentCatalogType) return false;
 
-  if(product.price < state.min || product.price > state.max) return false;
+  if(hasProductPrice(product) && (product.price < state.min || product.price > state.max)) return false;
 
   if(currentCatalogType === 'kit'){
     if(state.points.length && state.points.indexOf(String(product.specs[0][1])) === -1) return false;
@@ -2290,6 +2330,8 @@ document.getElementById('lampFilters').style.display  = (currentCatalogType === 
     catalogEmptyEl.style.display = 'block';
     if(currentCatalogType === 'kit'){
       catalogEmptyEl.textContent = 'Ничего не найдено под выбранные фильтры — попробуйте расширить диапазон цены или снять часть отметок.';
+    } else if(currentCatalogType === 'car'){
+      catalogEmptyEl.textContent = 'Автомобильных комплектов по выбранным условиям не найдено.';
     } else {
       var anyPower = document.getElementById('powerFilter').querySelector('input:checked');
       catalogEmptyEl.textContent = anyPower
@@ -2426,6 +2468,7 @@ document.getElementById('lampFilters').style.display  = (currentCatalogType === 
   function persistCart(){ try{ localStorage.setItem('vns_cart', JSON.stringify(cart)); }catch(e){} }
 
   function addToCart(product, qty){
+    if(!hasProductPrice(product)){ requestProductQuote(); return; }
     qty = qty || 1;
     var existing = cart.find(function(i){ return i.id === product.id; });
     if(existing){ existing.qty += qty; }
@@ -2523,6 +2566,7 @@ document.getElementById('lampFilters').style.display  = (currentCatalogType === 
     if(!card) return;
     var product = productsById[card.getAttribute('data-id')];
     if(!product) return;
+    if(e.target.closest('[data-quote]')){ requestProductQuote(); return; }
     var addBtn = e.target.closest('[data-add]');
     if(addBtn){
       addToCart(product, 1);
@@ -2532,6 +2576,7 @@ document.getElementById('lampFilters').style.display  = (currentCatalogType === 
   });
 
   document.getElementById('modalAddBtn').addEventListener('click', function(){
+    if(currentModalProduct && !hasProductPrice(currentModalProduct)){ requestProductQuote(); return; }
     if(currentModalProduct){ addToCart(currentModalProduct, 1); }
     closeModal(productModal);
     overlay.classList.remove('open');
