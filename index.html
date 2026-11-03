@@ -1,0 +1,2720 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>voloknostars — оптоволоконное звёздное небо для хамама</title>
+<meta name="description" content="voloknostars — оптоволоконные потолки «звёздное небо» ручной сборки для хамама, бани и спа. Безопасно, индивидуально, на долгие годы.">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://voloknostars.vercel.app/">
+<meta property="og:url" content="https://voloknostars.vercel.app/">
+<meta property="og:title" content="voloknostars — оптоволоконное звёздное небо для хамама">
+<meta property="og:description" content="Оптоволоконное звёздное небо ручной сборки для хамама, бани и спа.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110407960', 'ym');
+
+    ym(110407960, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110407960" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "VOLOKNOSTARS",
+  "description": "Оптоволоконное звёздное небо ручной сборки для хамама, бани и спа.",
+  "url": "https://voloknostars.vercel.app/",
+  "telephone": "+79112394045",
+  "email": "studiovolokno@mail.ru",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Санкт-Петербург",
+    "addressCountry": "RU"
+  },
+  "priceRange": "₽₽",
+  "image": "https://voloknostars.ru/4-fotor-bg-remover-20260705152529.png"
+}
+</script>
+<style>
+  :root{
+    --void:#f7f4ee;
+    --deep:#fbf8f3;
+    --deep-2:#f1ece0;
+    --panel:#ffffff;
+    --panel-2:#ece4d3;
+    --line:rgba(28,27,24,.12);
+    --line-soft:rgba(28,27,24,.07);
+    --text:#1c1b18;
+    --text-dim:#5c584f;
+    --text-faint:#8f8a7d;
+    --gold:#b3812f;
+    --gold-soft:#8a5f1f;
+    --radius:20px;
+    --radius-sm:12px;
+    --shadow-lg:0 24px 60px -24px rgba(28,27,24,.18);
+    --ease:cubic-bezier(.16,.84,.44,1);
+  }
+  /* Scoped dark palette for sections that stage the night-sky effect */
+  .night{
+    --void:#04050c;
+    --deep:#0a0e1f;
+    --deep-2:#0d1226;
+    --panel:#10152b;
+    --panel-2:#151b36;
+    --line:rgba(255,255,255,.09);
+    --line-soft:rgba(255,255,255,.05);
+    --text:#eef1fa;
+    --text-dim:#a7add0;
+    --text-faint:#6b7194;
+    --gold:#f0c479;
+    --gold-soft:#f7dca6;
+    --shadow-lg:0 30px 80px -20px rgba(0,0,0,.6);
+  }
+  *,*::before,*::after{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; overflow-x:hidden; width:100%;}
+    body{
+    background:var(--void);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    width:100%;
+    -webkit-tap-highlight-color:transparent;
+  }
+  body.no-scroll{overflow:hidden;}
+  h1,h2,h3,h4{font-weight:700; line-height:1.15; letter-spacing:-.01em; color:var(--text);}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  button{font:inherit; color:inherit; background:none; border:none; cursor:pointer;}
+  ul{list-style:none;}
+  input,textarea{font:inherit; color:inherit;}
+  .container{width:100%; max-width:1180px; margin:0 auto; padding:0 24px;}
+  #catalog .container{max-width:1400px;}
+  ::selection{background:var(--gold); color:#fff;}
+
+  /* ---------- Scrollbar ---------- */
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--void);}
+  ::-webkit-scrollbar-thumb{background:rgba(28,27,24,.25); border-radius:10px;}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s var(--ease), transform .5s var(--ease); transition-delay:var(--d,0s);}
+  .reveal.is-visible{opacity:1; transform:none;}
+  .reveal-scale{opacity:0; transform:scale(.97); transition:opacity .5s var(--ease), transform .5s var(--ease); transition-delay:var(--d,0s);}
+  .reveal-scale.is-visible{opacity:1; transform:none;}
+
+  /* ---------- Eyebrow / kicker ---------- */
+  .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12.5px; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--gold-soft); font-weight:700; margin-bottom:14px;
+  }
+  .kicker::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 10px var(--gold);}
+
+  .section{padding:120px 0; position:relative;}
+  .section-head{max-width:640px; margin-bottom:64px;}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+  .section-title{font-size:clamp(28px,4vw,44px); margin-bottom:16px;}
+  .section-sub{color:var(--text-dim); font-size:17px; max-width:560px;}
+  .section-head.center .section-sub{margin:0 auto;}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:16px 30px; border-radius:100px; font-weight:700; font-size:15px;
+    cursor:pointer; transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s, color .35s;
+    white-space:nowrap; position:relative; overflow:hidden;
+  }
+  .btn-gold{background:linear-gradient(135deg,var(--gold-soft),var(--gold)); color:#241a05; box-shadow:0 12px 30px -8px rgba(240,196,121,.55);}
+  .btn-gold:hover{transform:translateY(-3px); box-shadow:0 18px 40px -10px rgba(240,196,121,.7);}
+  .btn-ghost{border:1px solid var(--line); color:var(--text); background:rgba(255,255,255,.02); backdrop-filter:blur(6px);}
+  .btn-ghost:hover{border-color:rgba(255,255,255,.3); transform:translateY(-3px);}
+  .btn-sm{padding:11px 20px; font-size:13.5px;}
+  .btn-block{width:100%;}
+  .btn[disabled]{opacity:.45; cursor:not-allowed; transform:none !important;}
+
+  /* ================= HEADER ================= */
+  /* Header starts over the dark hero, so it borrows the night palette until scrolled past it */
+  header{
+    --text:#f5f3ee;
+    --text-dim:rgba(245,243,238,.75);
+    --gold-soft:#f7dca6;
+    --line:rgba(255,255,255,.18);
+    position:fixed; top:0; left:0; right:0; z-index:200;
+    padding:22px 0; transition:padding .4s var(--ease), background .4s var(--ease), border-color .4s var(--ease);
+    border-bottom:1px solid transparent;
+    background:linear-gradient(180deg, rgba(4,5,12,.8) 0%, rgba(4,5,12,.5) 65%, transparent 100%);
+    text-shadow:0 2px 16px rgba(0,0,0,.8), 0 1px 3px rgba(0,0,0,.85);
+  }
+  header.scrolled{
+    --text:#1c1b18;
+    --text-dim:#5c584f;
+    --gold-soft:#8a5f1f;
+    --line:rgba(28,27,24,.12);
+    padding:14px 0; background:rgba(247,244,238,.86); backdrop-filter:blur(16px) saturate(140%);
+    border-bottom:1px solid var(--line);
+    text-shadow:none;
+  }
+  .nav-row{display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .logo{display:inline-flex; align-items:center;}
+  .logo-svg{
+    height:30px; width:auto; display:block;
+    color:var(--text);
+    overflow:visible;
+  }
+  header .logo-svg{--logo-cut:#04050c;}
+  header.scrolled .logo-svg{--logo-cut:#f7f4ee;}
+  footer .logo-svg{--logo-cut:#f7f4ee;}
+  .logo-img{height:90px; width:auto; display:block; transition:filter .3s var(--ease);}
+  header .logo-img{filter:brightness(0) invert(1);}
+  header.scrolled .logo-img{filter:none;}
+  nav.main-nav{display:flex; align-items:center; gap:36px;}
+  nav.main-nav a{font-size:14.5px; font-weight:600; color:var(--text-dim); transition:color .25s; position:relative;}
+  nav.main-nav a::after{content:''; position:absolute; left:0; right:0; bottom:-6px; height:1px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease);}
+  nav.main-nav a:hover{color:var(--text);}
+  nav.main-nav a:hover::after{transform:scaleX(1);}
+  .header-actions{display:flex; align-items:center; gap:14px;}
+  .icon-btn{
+    position:relative; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--line); background:rgba(255,255,255,.08); backdrop-filter:blur(8px); box-shadow:0 2px 12px rgba(0,0,0,.18);
+    color:var(--text); transition:border-color .3s, transform .3s, background .3s;
+  }
+  .icon-btn:hover{border-color:var(--gold); transform:translateY(-2px); background:rgba(255,255,255,.16);}
+  .icon-btn svg{width:19px; height:19px; filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));}
+  header .icon-btn{border-color:rgba(255,255,255,.3); background:rgba(255,255,255,.12);}
+  header.scrolled .icon-btn{border-color:var(--line); background:rgba(28,27,24,.04); box-shadow:none;}
+  header.scrolled .icon-btn svg{filter:none;}
+  .cart-badge{
+    position:absolute; top:-4px; right:-4px; min-width:18px; height:18px; padding:0 4px; border-radius:9px;
+    background:var(--gold); color:#241a05; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center;
+    transform:scale(0); transition:transform .3s var(--ease);
+  }
+  .cart-badge.show{transform:scale(1);}
+  .burger{display:none; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); align-items:center; justify-content:center;}
+  .burger span,.burger span::before,.burger span::after{content:''; display:block; width:18px; height:2px; background:var(--text); position:relative; transition:.3s;}
+  .burger span::before{position:absolute; top:-6px;}
+  .burger span::after{position:absolute; top:6px;}
+  .burger.open span{background:transparent;}
+  .burger.open span::before{top:0; transform:rotate(45deg);}
+  .burger.open span::after{top:0; transform:rotate(-45deg);}
+
+  .mobile-nav{
+    position:fixed; inset:0; z-index:190; background:rgba(247,244,238,.98); backdrop-filter:blur(10px);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:28px;
+    opacity:0; visibility:hidden; transition:opacity .4s var(--ease);
+  }
+  .mobile-nav.open{opacity:1; visibility:visible;}
+  .mobile-nav a{font-size:26px; font-weight:700;}
+
+  /* ================= HERO ================= */
+  .hero{
+    position:relative; min-height:100vh; min-height:100svh; display:flex; align-items:center; padding-top:120px; overflow:hidden;
+    background-color:var(--void);
+  }
+  .hero-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;}
+  .hero canvas{position:absolute; inset:0; width:100%; height:100%;}
+  .hero::after{
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse 62% 58% at 50% 52%, rgba(4,5,12,.45), transparent 72%),
+               radial-gradient(ellipse 60% 50% at 50% 100%, rgba(240,196,121,.08), transparent 60%),
+               linear-gradient(180deg, rgba(4,5,12,.6) 0%, rgba(4,5,12,.42) 45%, rgba(4,5,12,.6) 75%, var(--void) 100%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:2; text-align:center; max-width:1100px; margin:0 auto; padding:0 24px;}
+  .hero-inner .kicker{text-shadow:0 1px 14px rgba(0,0,0,.6);}
+  .hero-inner h1{font-size:clamp(36px,5vw,68px); margin-bottom:22px; text-shadow:0 4px 30px rgba(0,0,0,.55), 0 1px 4px rgba(0,0,0,.5); line-height:1.12;}
+  .hero-inner h1 em{font-style:normal; color:var(--gold-soft);}
+  .hero-inner p:not(.kicker){font-size:clamp(16px,2vw,19px); color:var(--text-dim); max-width:600px; margin:0 auto 40px; text-shadow:0 1px 14px rgba(0,0,0,.6);}
+  .hero-cta{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .scroll-cue{
+    position:absolute; bottom:36px; left:50%; transform:translateX(-50%); z-index:2;
+    display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--text-faint); font-size:12px; letter-spacing:2px; text-transform:uppercase;
+  }
+  .scroll-cue .line{width:1px; height:38px; background:linear-gradient(var(--gold), transparent); animation:scrollcue 2.2s ease-in-out infinite;}
+  @keyframes scrollcue{0%{transform:scaleY(0); transform-origin:top;} 50%{transform:scaleY(1); transform-origin:top;} 50.01%{transform-origin:bottom;} 100%{transform:scaleY(0); transform-origin:bottom;}}
+
+  /* ================= TRUST STRIP ================= */
+  .trust-strip{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:26px 0; background:linear-gradient(180deg,rgba(255,255,255,.015),transparent);}
+  .trust-row{display:flex; justify-content:center; align-items:center; gap:0; flex-wrap:wrap; row-gap:10px;}
+  .trust-item{color:var(--text-dim); font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; padding:0 26px; position:relative;}
+  .trust-item:not(:first-child)::before{content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); width:3px; height:3px; border-radius:50%; background:var(--gold);}
+
+  /* ================= WHY / FEATURES ================= */
+  .features-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-bottom:20px;}
+  .feature-card{background:var(--deep); transition:background .3s;}
+  .feature-card:hover{background:var(--panel);}
+  .feature-toggle{
+    width:100%; padding:24px 26px; display:flex; align-items:center; gap:16px; text-align:left;
+  }
+  .feature-num{
+    flex-shrink:0; width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; font-size:12.5px; font-weight:700; color:var(--gold);
+    transition:border-color .25s, background .25s;
+  }
+  .feature-toggle:hover .feature-num{border-color:var(--gold); background:rgba(240,196,121,.1);}
+  .feature-card h3{font-size:16.5px; flex:1;}
+  .feature-plus{flex-shrink:0; width:18px; height:18px; position:relative;}
+  .feature-plus::before,.feature-plus::after{content:''; position:absolute; background:var(--gold); top:50%; left:50%; transform:translate(-50%,-50%);}
+  .feature-plus::before{width:12px; height:1.5px;}
+  .feature-plus::after{width:1.5px; height:12px; transition:transform .35s var(--ease);}
+  .feature-toggle[aria-expanded="true"] .feature-plus::after{transform:translate(-50%,-50%) rotate(90deg) scaleY(0);}
+  .feature-body{max-height:0; overflow:hidden; transition:max-height .45s var(--ease);}
+  .feature-body p{padding:0 26px 24px 76px; color:var(--text-dim); font-size:14.5px;}
+
+  /* ================= PREVIEW / DOME ================= */
+  .preview{background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(155,140,251,.08), transparent 60%), var(--deep-2);}
+  .preview-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center;}
+  .dome-wrap{position:relative;}
+  .dome{
+    position:relative; aspect-ratio:1/0.82; border-radius:50% 50% 8px 8px/62% 62% 8px 8px;
+    overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow-lg), inset 0 0 60px rgba(0,0,0,.5);
+    background:#050813;
+  }
+  .dome img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .dome-glow{position:absolute; left:50%; bottom:-10%; width:70%; height:40%; transform:translateX(-50%); background:radial-gradient(ellipse, rgba(240,196,121,.35), transparent 70%); filter:blur(30px); z-index:-1;}
+  .preview-list{margin-top:30px; display:flex; flex-direction:column; gap:18px;}
+  .preview-list li{display:flex; gap:14px; align-items:flex-start; color:var(--text-dim); font-size:15px;}
+  .preview-list .num{
+    flex-shrink:0; width:30px; height:30px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--gold); font-size:13px;
+  }
+  
+  /* ================= CONSTRUCTOR ================= */
+  #constructor{background:var(--void);}
+  .constructor-wrap{
+    display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;
+  }
+  @media(max-width:860px){.constructor-wrap{grid-template-columns:1fr; gap:40px;}}
+  .ctor-panel{display:flex; flex-direction:column; gap:32px;}
+  .ctor-field{display:flex; flex-direction:column; gap:10px;}
+  .ctor-label{
+    font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--text-dim);
+  }
+  .ctor-value{
+    font-size:15px; font-weight:700; color:var(--gold);
+    min-width:48px; text-align:right;
+  }
+  .ctor-label-row{display:flex; justify-content:space-between; align-items:center;}
+  input[type=range].ctor-range{
+    -webkit-appearance:none; appearance:none;
+    width:100%; height:4px; background:var(--line); border-radius:4px;
+    outline:none; cursor:pointer;
+  }
+  input[type=range].ctor-range::-webkit-slider-thumb{
+    -webkit-appearance:none; appearance:none;
+    width:20px; height:20px; border-radius:50%;
+    background:var(--gold); box-shadow:0 0 0 4px rgba(179,129,47,.18);
+    border:2px solid var(--void); transition:transform .15s;
+  }
+  input[type=range].ctor-range::-webkit-slider-thumb:hover{transform:scale(1.15);}
+  input[type=range].ctor-range::-moz-range-thumb{
+    width:20px; height:20px; border-radius:50%;
+    background:var(--gold); box-shadow:0 0 0 4px rgba(179,129,47,.18);
+    border:2px solid var(--void);
+  }
+  .ctor-chips{display:flex; flex-wrap:wrap; gap:10px;}
+  .ctor-chip{
+    padding:8px 18px; border-radius:40px; border:1.5px solid var(--line);
+    font-size:13.5px; font-weight:600; color:var(--text-dim);
+    cursor:pointer; transition:all .2s var(--ease); background:var(--panel);
+  }
+  .ctor-chip.active{
+    background:var(--gold); border-color:var(--gold); color:#fff;
+  }
+  .ctor-chip:hover:not(.active){border-color:var(--gold); color:var(--gold);}
+  .ctor-textarea{
+    resize:vertical; min-height:80px; background:var(--panel);
+    border:1.5px solid var(--line); border-radius:var(--radius-sm);
+    padding:12px 14px; font-size:14px; color:var(--text);
+    transition:border-color .2s;
+  }
+  .ctor-textarea:focus{outline:none; border-color:var(--gold);}
+  .ctor-preview-wrap{
+    position:sticky; top:100px;
+    background:var(--deep); border-radius:var(--radius);
+    box-shadow:var(--shadow-lg);
+  }
+  .ctor-price-panel{
+    padding:24px 28px; display:flex; flex-direction:column; gap:16px;
+  }
+  .ctor-price-row{display:flex; justify-content:space-between; align-items:center;}
+  .ctor-price-label{font-size:13px; color:var(--text-dim);}
+  .ctor-price-big{font-size:28px; font-weight:800; color:var(--gold);}
+  .ctor-price-old{font-size:14px; color:var(--text-faint); text-decoration:line-through;}
+  .ctor-add-btn{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    width:100%; padding:15px 24px; border-radius:50px;
+    background:var(--gold); color:#fff; font-size:15px; font-weight:700;
+    border:none; cursor:pointer; transition:opacity .2s, transform .15s var(--ease);
+  }
+  .ctor-add-btn:hover{opacity:.88; transform:translateY(-1px);}
+  .ctor-add-btn:active{transform:translateY(0);}
+
+  /* ================= PHOTO GRID ================= */
+  .photo-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .photo-tile{border-radius:var(--radius-sm); overflow:hidden; aspect-ratio:3/4;}
+  .photo-tile img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s var(--ease);}
+  .photo-tile:hover img{transform:scale(1.04);}
+
+  /* ================= PROCESS ================= */
+  .process-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:28px; counter-reset:step;}
+  .step-card{position:relative; padding-top:10px;}
+  .step-num{
+    font-size:48px; font-weight:700; color:transparent;
+    -webkit-text-stroke:1.5px var(--gold); margin-bottom:18px; line-height:1;
+  }
+  .step-card h3{font-size:18px; margin-bottom:10px;}
+  .step-card p{color:var(--text-dim); font-size:14.5px;}
+  .step-line{position:absolute; top:34px; left:calc(100% - 6px); width:calc(28px + 12px); height:1px; background:repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 12px);}
+  @media(max-width:900px){.step-line{display:none;}}
+
+  /* ================= CATALOG ================= */
+  .catalog{position:relative;}
+   /* ---- Catalog tabs ---- */
+  .catalog-tabs{
+    display:inline-flex;
+    gap:4px;
+    padding:5px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:100px;
+    margin-bottom:32px;
+  }
+  .catalog-tab{
+    padding:12px 26px;
+    border-radius:100px;
+    font-size:14.5px;
+    font-weight:700;
+    color:var(--text-dim);
+    cursor:pointer;
+    transition:background .25s var(--ease), color .25s var(--ease);
+    white-space:nowrap;
+  }
+  .catalog-tab:hover:not(.active){color:var(--text);}
+  .catalog-tab.active{
+    background:var(--gold);
+    color:#241a05;
+  }
+  @media(max-width:640px){
+    .catalog-tabs{width:100%; justify-content:center; flex-wrap:wrap; border-radius:20px;}
+    .catalog-tab{flex:1 1 auto; padding:10px 16px; font-size:13px;}
+  }
+  .catalog-banner{
+    display:flex; align-items:center; gap:16px; padding:18px 26px; border-radius:100px;
+    border:1px solid var(--line); background:linear-gradient(90deg, rgba(240,196,121,.07), rgba(155,140,251,.06));
+    margin-bottom:56px; flex-wrap:wrap;
+  }
+  .catalog-banner .dot-pulse{width:10px; height:10px; border-radius:50%; background:var(--gold); flex-shrink:0; box-shadow:0 0 0 0 rgba(240,196,121,.6); animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(240,196,121,.55);}70%{box-shadow:0 0 0 12px rgba(240,196,121,0);}100%{box-shadow:0 0 0 0 rgba(240,196,121,0);}}
+  .catalog-banner p{font-size:14.5px; color:var(--text-dim);}
+  .catalog-banner strong{color:var(--text);}
+
+  /* ================= CATALOG FILTERS ================= */
+  .catalog-filters{
+    display:flex; flex-wrap:wrap; align-items:flex-end; gap:30px 40px;
+    background:var(--panel); border:1px solid var(--line); border-radius:24px;
+    padding:26px 30px; margin-bottom:36px;
+  }
+  .filter-group{display:flex; flex-direction:column; gap:12px;}
+  .filter-price{flex:1 1 240px; min-width:220px;}
+  .filter-label{font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--text-faint);}
+  .price-range{position:relative; height:20px;}
+  .price-track{position:absolute; top:50%; left:0; right:0; height:4px; background:var(--line); border-radius:4px; transform:translateY(-50%);}
+  .price-track-fill{position:absolute; top:0; height:100%; background:var(--gold); border-radius:4px;}
+  .price-range input[type=range]{
+    position:absolute; top:50%; left:0; width:100%; height:0; margin:0; transform:translateY(-50%);
+    -webkit-appearance:none; appearance:none; background:transparent; pointer-events:none;
+  }
+  .price-range input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; pointer-events:all; width:18px; height:18px; border-radius:50%;
+    background:#fff; border:2px solid var(--gold); box-shadow:0 2px 6px rgba(0,0,0,.25); cursor:pointer;
+  }
+  .price-range input[type=range]::-moz-range-thumb{
+    pointer-events:all; width:18px; height:18px; border-radius:50%; border:2px solid var(--gold);
+    background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.25); cursor:pointer;
+  }
+  .price-values{font-size:13px; font-weight:600; color:var(--text-dim); display:flex; gap:6px; align-items:center; margin-top:10px;}
+  .filter-chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{position:relative; display:inline-flex;}
+  .chip input{position:absolute; inset:0; opacity:0; margin:0; cursor:pointer;}
+  .chip span{
+    display:inline-flex; align-items:center; padding:7px 15px; border-radius:100px;
+    border:1px solid var(--line); font-size:13px; font-weight:600; color:var(--text-dim);
+    transition:background .2s, border-color .2s, color .2s;
+  }
+  .chip:hover span{border-color:var(--gold);}
+  .chip input:checked + span{background:var(--gold); border-color:var(--gold); color:#241a05;}
+  .chip input:focus-visible + span{outline:2px solid var(--gold); outline-offset:2px;}
+  .filter-reset{
+    margin-left:auto; align-self:center; font-size:13px; font-weight:700; color:var(--gold-soft);
+    text-decoration:underline; white-space:nowrap;
+  }
+  .catalog-empty{text-align:center; color:var(--text-dim); font-size:15px; padding:50px 20px; margin-bottom:36px;}
+
+  .catalog-collapse{position:relative; overflow:hidden; transition:max-height .6s var(--ease);}
+  .catalog-fade{
+    position:absolute; left:0; right:0; bottom:0; height:140px;
+    background:linear-gradient(180deg, transparent, var(--void)); pointer-events:none;
+    opacity:1; transition:opacity .4s var(--ease);
+  }
+  .catalog-collapse.expanded .catalog-fade{opacity:0;}
+  .catalog-toggle{
+    display:flex; align-items:center; gap:10px; margin:32px auto 0; padding:14px 28px;
+    border:1px solid var(--line); border-radius:100px; font-size:14.5px; font-weight:700;
+    background:var(--panel); transition:border-color .25s, transform .25s;
+  }
+  .catalog-toggle:hover{border-color:var(--gold); transform:translateY(-2px);}
+  .catalog-toggle .chevron{
+    width:9px; height:9px; border-right:2px solid var(--gold); border-bottom:2px solid var(--gold);
+    transform:rotate(45deg); transition:transform .35s var(--ease); margin-top:-3px;
+  }
+  .catalog-toggle.expanded .chevron{transform:rotate(-135deg); margin-top:3px;}
+
+  .product-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .card{
+    border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); cursor:pointer;
+    overflow:hidden; transition:transform .3s var(--ease), border-color .3s, box-shadow .3s;
+  }
+  .card:hover{transform:translateY(-3px); border-color:rgba(240,196,121,.35); box-shadow:var(--shadow-lg);}
+  .card-media{position:relative; aspect-ratio:4/3; overflow:hidden; background:linear-gradient(160deg,#f7f2e7,#ece2cc);}
+  .card-media.night{background:#070a16;}
+  .card-media canvas{position:absolute; inset:0; width:100%; height:100%;}
+  .card-media img{position:absolute; inset:0; width:100%; height:100%; object-fit:contain;}
+  .card-badge{
+    position:absolute; top:14px; left:14px; z-index:2; font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase;
+    padding:6px 12px; border-radius:100px; backdrop-filter:blur(6px);
+  }
+  .card-badge.sale{background:#16a34a; color:#fff; border:1px solid rgba(255,255,255,.3); box-shadow:0 4px 14px rgba(22,163,74,.4);}
+  .card-body{padding:24px 26px 26px;}
+  .card-body h3{font-size:18.5px; margin-bottom:8px;}
+  .card-body .desc{color:var(--text-dim); font-size:14px; margin-bottom:18px;}
+  .card-foot{display:flex; align-items:center; justify-content:space-between; gap:12px;}
+  .price{font-size:19px; font-weight:700; color:var(--gold-soft);}
+  .price small{display:block; font-size:11px; color:var(--text-faint); font-weight:600; text-transform:uppercase; letter-spacing:.5px;}
+  .price .price-old{display:block; font-size:13px; font-weight:600; color:var(--text-faint); text-decoration:line-through; text-transform:none; letter-spacing:0;}
+  .card-btns{display:flex; gap:8px;}
+  .icon-square{width:42px; height:42px; border-radius:10px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; transition:.3s;}
+  .icon-square:hover{border-color:var(--gold); color:var(--gold);}
+  .icon-square svg{width:17px; height:17px;}
+
+  /* ================= FAQ ================= */
+  .faq-list{max-width:760px; margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:26px 4px; text-align:left; font-size:17px; font-weight:600;}
+  .faq-q .plus{flex-shrink:0; width:26px; height:26px; position:relative;}
+  .faq-q .plus::before,.faq-q .plus::after{content:''; position:absolute; background:var(--gold); top:50%; left:50%; transform:translate(-50%,-50%);}
+  .faq-q .plus::before{width:14px; height:1.5px;}
+  .faq-q .plus::after{width:1.5px; height:14px; transition:transform .35s var(--ease);}
+  .faq-item.open .plus::after{transform:translate(-50%,-50%) rotate(90deg) scaleY(0);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .5s var(--ease);}
+  .faq-a p{padding:0 4px 26px; color:var(--text-dim); font-size:15px; max-width:640px;}
+
+  /* ================= CONTACTS ================= */
+  .contacts{background:radial-gradient(ellipse 70% 50% at 50% 100%, rgba(240,196,121,.07), transparent 60%), var(--deep-2);}
+  .contacts-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:60px;}
+  .contact-line{display:flex; gap:16px; align-items:flex-start; margin-bottom:26px;}
+  .contact-line .icon-square{background:var(--panel);}
+  .contact-line h4{font-size:13px; text-transform:uppercase; letter-spacing:1px; color:var(--text-faint); margin-bottom:4px;}
+  .contact-line a,.contact-line span{font-size:16px; font-weight:600;}
+  .social-row{display:flex; gap:12px; margin-top:30px;}
+
+  .form-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:40px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block; font-size:12.5px; text-transform:uppercase; letter-spacing:1px; color:var(--text-faint); margin-bottom:8px; font-weight:700;}
+  .field input,.field textarea{
+    width:100%; background:var(--deep); border:1px solid var(--line); border-radius:10px; padding:14px 16px;
+    font-size:16px; color:var(--text); transition:border-color .3s;
+  }
+  .field input:focus,.field textarea:focus{outline:none; border-color:var(--gold);}
+  .field textarea{resize:vertical; min-height:100px;}
+  .form-note{font-size:12.5px; color:var(--text-faint); margin-top:14px; text-align:center;}
+
+  /* ================= FOOTER ================= */
+  footer{border-top:1px solid var(--line); padding:60px 0 34px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:40px; margin-bottom:50px;}
+  .footer-brand p{color:var(--text-dim); font-size:14px; margin-top:16px; max-width:280px;}
+  .footer-col h5{font-size:13px; text-transform:uppercase; letter-spacing:1px; color:var(--text-faint); margin-bottom:18px;}
+  .footer-col ul li{margin-bottom:12px;}
+  .footer-col a{color:var(--text-dim); font-size:14.5px; transition:color .25s;}
+  .footer-col a:hover{color:var(--gold-soft);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:30px; border-top:1px solid var(--line-soft); color:var(--text-faint); font-size:13px; flex-wrap:wrap; gap:12px;}
+
+  /* ================= CART DRAWER ================= */
+  .overlay{position:fixed; inset:0; background:rgba(4,5,12,.6); backdrop-filter:blur(4px); z-index:300; opacity:0; visibility:hidden; transition:opacity .4s var(--ease);}
+  .overlay.open{opacity:1; visibility:visible;}
+  .cart-drawer{
+    position:fixed; top:0; right:0; bottom:0; width:min(420px,100%); background:var(--deep-2); z-index:301;
+    border-left:1px solid var(--line); display:flex; flex-direction:column; transform:translateX(100%); transition:transform .5s var(--ease);
+  }
+  .cart-drawer.open{transform:translateX(0);}
+  .cart-head{display:flex; align-items:center; justify-content:space-between; padding:26px; border-bottom:1px solid var(--line);}
+  .cart-head h3{font-size:20px;}
+  .cart-close{width:36px; height:36px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center;}
+  .cart-items{flex:1; overflow-y:auto; padding:10px 26px;}
+  .cart-empty{display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center; color:var(--text-faint); gap:14px; padding:40px 0;}
+  .cart-empty svg{width:48px; height:48px; color:var(--text-faint); opacity:.5;}
+  .cart-row{display:flex; gap:14px; padding:18px 0; border-bottom:1px solid var(--line-soft);}
+  .cart-row .thumb{width:64px; height:64px; border-radius:10px; overflow:hidden; flex-shrink:0; position:relative; background:linear-gradient(160deg,#f7f2e7,#ece2cc);}
+  .cart-row .thumb.night{background:#070a16;}
+  .cart-row .thumb canvas{position:absolute; inset:0; width:100%; height:100%;}
+  .cart-row .thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:contain;}
+  .cart-row .info{flex:1; display:flex; flex-direction:column; justify-content:center; gap:6px;}
+  .cart-row .info .name{font-size:14.5px; font-weight:700;}
+  .cart-row .info .p{font-size:13px; color:var(--gold-soft);}
+  .qty-stepper{display:flex; align-items:center; gap:10px; margin-top:4px;}
+  .qty-stepper button{width:22px; height:22px; border:1px solid var(--line); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:14px;}
+  .qty-stepper span{font-size:13px; font-weight:700; min-width:16px; text-align:center;}
+  .cart-row .remove{align-self:flex-start; color:var(--text-faint); font-size:12px; text-decoration:underline; margin-top:2px;}
+  .cart-foot{padding:24px 26px 28px; border-top:1px solid var(--line);}
+  .cart-total{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px;}
+  .cart-total .lbl{color:var(--text-dim); font-size:14px;}
+  .cart-total .val{font-size:22px; font-weight:700; color:var(--gold-soft);}
+
+  /* ================= MODAL (product / checkout) ================= */
+  .modal-wrap{position:fixed; inset:0; z-index:310; display:flex; align-items:center; justify-content:center; padding:24px; opacity:0; visibility:hidden; transition:opacity .4s var(--ease);}
+  .modal-wrap.open{opacity:1; visibility:visible;}
+  .modal-box{
+    position:relative; width:100%; max-width:840px; background:var(--deep-2);
+    border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow-lg);
+    transform:translateY(30px) scale(.97); transition:transform .5s var(--ease);
+    overflow:hidden;
+  }
+  .modal-info{overflow-y:auto; max-height:88vh;}
+  .modal-wrap.open .modal-box{transform:translateY(0) scale(1);}
+  .modal-close{position:absolute; top:20px; right:20px; z-index:5; width:38px; height:38px; border-radius:50%; background:var(--panel-2); border:1px solid var(--line); color:var(--text); display:flex; align-items:center; justify-content:center;}
+  .modal-grid{display:grid; grid-template-columns:1fr 1fr;}
+  .modal-media{position:relative; min-height:320px; background:linear-gradient(160deg,#f7f2e7,#ece2cc);}
+  .modal-media.night{background:#070a16;}
+  .modal-media canvas{position:absolute; inset:0; width:100%; height:100%;}
+  .modal-media img{position:absolute; inset:0; width:100%; height:100%; object-fit:contain;}
+  .modal-info{padding:44px 44px 44px 38px;}
+  .modal-info .kicker{margin-bottom:10px;}
+  .modal-info h2{font-size:26px; margin-bottom:14px;}
+  .modal-info .desc{color:var(--text-dim); font-size:14.5px; margin-bottom:22px;}
+  .modal-specs{list-style:none; margin-bottom:26px;}
+  .modal-specs li{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:11px 0; border-bottom:1px solid var(--line-soft); font-size:14px;}
+  .modal-specs li span:first-child{color:var(--text-faint); flex-shrink:0; max-width:44%;}
+  .modal-specs li span:last-child{text-align:right; line-height:1.7;}
+  .modal-price-row{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:22px;}
+  .modal-form{padding:44px; max-width:520px; margin:0 auto;}
+  .modal-form h2{font-size:24px; margin-bottom:8px;}
+  .modal-form>.sub{color:var(--text-dim); font-size:14.5px; margin-bottom:28px;}
+  .success-view{padding:70px 44px; text-align:center;}
+  .success-check{
+    width:78px; height:78px; border-radius:50%; margin:0 auto 26px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, rgba(240,196,121,.2), rgba(155,140,251,.15)); position:relative;
+  }
+  .success-check svg{width:34px; height:34px; color:var(--gold);}
+  .success-view h3{font-size:22px; margin-bottom:10px;}
+  .success-view p{color:var(--text-dim); font-size:14.5px; max-width:340px; margin:0 auto;}
+
+  /* toast */
+  .toast{
+    position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px); z-index:400;
+    background:var(--panel-2); border:1px solid var(--line); padding:15px 24px; border-radius:100px; font-size:14px; font-weight:600;
+    display:flex; align-items:center; gap:10px; opacity:0; pointer-events:none; transition:opacity .35s var(--ease), transform .35s var(--ease); box-shadow:var(--shadow-lg);
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  .toast svg{width:16px; height:16px; color:var(--gold);}
+
+  /* ================= RESPONSIVE ================= */
+  @media(max-width:980px){
+    nav.main-nav{display:none;}
+    .burger{display:flex;}
+    .features-grid{grid-template-columns:1fr 1fr;}
+    .process-grid{grid-template-columns:1fr 1fr; row-gap:44px;}
+    .product-grid{grid-template-columns:1fr 1fr;}
+    .photo-grid{grid-template-columns:1fr 1fr;}
+    .preview-grid{grid-template-columns:1fr; gap:44px;}
+    .contacts-grid{grid-template-columns:1fr; gap:44px;}
+    .footer-grid{grid-template-columns:1fr 1fr; gap:36px;}
+    .modal-grid{grid-template-columns:1fr;}
+    .modal-media{min-height:220px;}
+  }
+  @media(max-width:640px){
+    .section{padding:80px 0;}
+    .hero{padding-top:100px;}
+    .features-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:1fr;}
+    .product-grid{grid-template-columns:1fr;}
+    .photo-grid{grid-template-columns:1fr 1fr; gap:12px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .modal-info,.modal-form{padding:30px 24px;}
+    .form-card{padding:26px;}
+    .hero-cta{flex-direction:column; width:100%;}
+    .hero-cta .btn{width:100%;}
+    .catalog-filters{padding:22px 20px; gap:22px 28px;}
+    .filter-price{flex-basis:100%;}
+    .filter-reset{margin-left:0;}
+  }
+  @media(max-height:700px) and (max-width:640px){
+    .hero{padding-top:90px;}
+    .scroll-cue{display:none;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
+    .reveal,.reveal-scale{opacity:1; transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader">
+  <div class="container nav-row">
+    <a href="#top" class="logo" aria-label="VOLOKNOSTARS">
+      <img class="logo-img" src="https://voloknostars.ru/4-fotor-bg-remover-20260705152529.png" alt="VOLOKNOSTARS">
+    </a>
+    <nav class="main-nav">
+      <a href="#why">О технологии</a>
+      <a href="#preview">Как это выглядит</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#constructor">Конструктор</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="cartBtn" aria-label="Корзина">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="21" r="1.4"/><circle cx="19" cy="21" r="1.4"/><path d="M2 3h2l2.6 12.6a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <button class="burger" id="burgerBtn" aria-label="Меню"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#why">О технологии</a>
+  <a href="#preview">Как это выглядит</a>
+  <a href="#catalog">Каталог</a>
+  <a href="#constructor">Конструктор</a>
+  <a href="#faq">Вопросы</a>
+  <a href="#contacts">Контакты</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero night" id="top">
+  <img class="hero-bg" src="https://i.ibb.co/1JmnNRMC/image.png" alt="" loading="eager" fetchpriority="high" decoding="async">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-inner">
+    <p class="kicker" style="justify-content:center;">оптоволоконное звёздное небо</p>
+    <h1>Создайте в своём хамаме<br><em>неповторимое звёздное небо</em></h1>
+    <p>Оптимальная технология для жаркой и влажной атмосферы хамама.</p>
+    <div class="hero-cta">
+      <a href="#catalog" class="btn btn-gold">Смотреть каталог</a>
+      <a href="#contacts" class="btn btn-ghost">Бесплатная консультация</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust-strip">
+  <div class="container trust-row">
+    <span class="trust-item">Безопасно при жаре и влажности</span>
+    <span class="trust-item">Индивидуальная схема звёзд</span>
+    <span class="trust-item">Поставка под ключ</span>
+    <span class="trust-item">Гарантия на систему</span>
+  </div>
+</div>
+
+<!-- ============ WHY / FEATURES ============ -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">почему оптоволокно</p>
+      <h2 class="section-title">Решение для условий высокой температуры и влажности хамама</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal" style="--d:.05s">
+        <button class="feature-toggle" aria-expanded="false">
+          <span class="feature-num">01</span>
+          <h3>Живое мерцание</h3>
+          <span class="feature-plus"></span>
+        </button>
+        <div class="feature-body"><p>Каждая точка светится и мерцает как настоящая звезда — эффект глубокого ночного неба над головой.</p></div>
+      </div>
+      <div class="feature-card reveal" style="--d:.1s">
+        <button class="feature-toggle" aria-expanded="false">
+          <span class="feature-num">02</span>
+          <h3>Полная безопасность</h3>
+          <span class="feature-plus"></span>
+        </button>
+        <div class="feature-body"><p>Источник света находится за пределами парной — на куполе только свечение оптоволоконных нитей. Они не проводят ток и не нагреваются.</p></div>
+      </div>
+      <div class="feature-card reveal" style="--d:.15s">
+        <button class="feature-toggle" aria-expanded="false">
+          <span class="feature-num">03</span>
+          <h3>Ваш узор звёзд</h3>
+          <span class="feature-plus"></span>
+        </button>
+        <div class="feature-body"><p>Созвездия, логотип или инициалы — расположение точек проектируется под вас.</p></div>
+      </div>
+      <div class="feature-card reveal" style="--d:.2s">
+        <button class="feature-toggle" aria-expanded="false">
+          <span class="feature-num">04</span>
+          <h3>Долгий срок службы</h3>
+          <span class="feature-plus"></span>
+        </button>
+        <div class="feature-body"><p>LED-источник работает многие годы, волокно не выгорает и не теряет яркость от пара и влаги.</p></div>
+      </div>
+      <div class="feature-card reveal" style="--d:.25s">
+        <button class="feature-toggle" aria-expanded="false">
+          <span class="feature-num">05</span>
+          <h3>Поставка под ключ</h3>
+          <span class="feature-plus"></span>
+        </button>
+        <div class="feature-body"><p>Расчёт по размерам, изготовление и поставка комплекта — берём на себя весь процесс.</p></div>
+      </div>
+      <div class="feature-card reveal" style="--d:.3s">
+        <button class="feature-toggle" aria-expanded="false">
+          <span class="feature-num">06</span>
+          <h3>Гарантия и сервис</h3>
+          <span class="feature-plus"></span>
+        </button>
+        <div class="feature-body"><p>Даём гарантию на всю систему и выполняем сервисное обслуживание.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== КНОПКА И МОДАЛЬНОЕ ОКНО ДЛЯ ИГРЫ ===== -->
+<section class="section" id="gameSection" style="padding: 60px 0; background: var(--deep);">
+  <div class="container" style="text-align: center;">
+    <div class="section-head center reveal" style="margin:0 auto; max-width:600px;">
+      <p class="kicker" style="justify-content:center;">🎮 Бонусная игра</p>
+      <h2 class="section-title" style="font-size:clamp(28px,3.5vw,42px);">Выиграй звёздные бонусы!</h2>
+      <p style="color:var(--text-dim); font-size:1.1rem; margin-bottom:30px;">Бонусная игра временно недоступна. Возвращайтесь позже!</p>
+    </div>
+    <button id="openGameBtn" type="button" disabled style="background:linear-gradient(135deg,#f0c479,#b3812f); color:#0a0e1f; border:none; padding:18px 50px; border-radius:60px; font-size:1.4rem; font-weight:700; cursor:not-allowed; opacity:.65; box-shadow:0 8px 30px rgba(240,196,121,0.5); transition:transform 0.2s, box-shadow 0.2s;">
+      Игра скоро появится
+    </button>
+    <p style="color:var(--text-faint); font-size:0.9rem; margin-top:16px;">Мы сообщим здесь, когда игра станет доступна.</p>
+  </div>
+</section>
+
+<!-- ===== МОДАЛЬНОЕ ОКНО ===== -->
+<div id="gameModal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:20px;">
+  <div style="position:relative; width:100%; max-width:820px; margin:0 auto; background:transparent;">
+    <!-- Кнопка закрытия -->
+    <button id="closeGameBtn" style="position:absolute; top:-50px; right:0; background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.3); border-radius:50%; width:44px; height:44px; color:white; font-size:24px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:0.2s; backdrop-filter:blur(4px);">✕</button>
+    
+    <!-- Сюда загружается игра через iframe -->
+    <iframe id="gameIframe" title="Бонусная игра" srcdoc="<!doctype html><html lang='ru'><meta charset='utf-8'><title>Игра временно недоступна</title><p>Игра временно недоступна.</p></html>" style="width:100%; height:500px; border-radius:20px; border:none; background:#050812;"></iframe>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const modal = document.getElementById('gameModal');
+    const openBtn = document.getElementById('openGameBtn');
+    const closeBtn = document.getElementById('closeGameBtn');
+
+    // Открыть модальное окно
+    openBtn.addEventListener('click', function() {
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // запретить прокрутку фона
+    });
+
+    // Закрыть по кнопке
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+      document.body.style.overflow = ''; // вернуть прокрутку
+    });
+
+    // Закрыть по клику на фон (за пределами iframe)
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Закрыть по ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  })();
+</script>
+<!-- ============ PREVIEW / DOME ============ -->
+<section class="section preview night" id="preview">
+  <div class="container preview-grid">
+    <div class="dome-wrap reveal-scale">
+      <div class="dome">
+        <img src="https://i.ibb.co/LDj4nh7B/dbfeb2dc-8fcb-4068-ad73-882048fe7801.png" alt="Купол хамама со звёздным небом" loading="lazy" decoding="async">
+      </div>
+      <div class="dome-glow"></div>
+    </div>
+    <div class="reveal" style="--d:.1s">
+      <p class="kicker">как это выглядит</p>
+      <h2 class="section-title">Купол хамама превращается в настоящее небо</h2>
+      <ul class="preview-list">
+        <li><span class="num">1</span><span>Проектор за пределами парной — на куполе только свечение оптоволоконных нитей.</span></li>
+        <li><span class="num">2</span><span>Плотность и рисунок точек — на ваш выбор.</span></li>
+        <li><span class="num">3</span><span>Статичное свечение или мягкое мерцание.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="kicker" style="justify-content:center;">как мы работаем</p>
+      <h2 class="section-title">От идеи до звёздного неба — четыре шага</h2>
+    </div>
+    <div class="process-grid">
+      <div class="step-card reveal" style="--d:.05s"><div class="step-num">01</div><h3>Консультация</h3><p>Обсуждаем задачу и работаем по вашим размерам и чертежам.</p><div class="step-line"></div></div>
+      <div class="step-card reveal" style="--d:.1s"><div class="step-num">02</div><h3>Схема звёзд</h3><p>Проектируем расположение точек, длины оптоволоконных нитей и эффекты индивидуально под ваш хамам.</p><div class="step-line"></div></div>
+      <div class="step-card reveal" style="--d:.15s"><div class="step-num">03</div><h3>Изготовление</h3><p>Изготавливаем по утверждённым размерам и количеству точек комплект звёздного неба.</p><div class="step-line"></div></div>
+      <div class="step-card reveal" style="--d:.2s"><div class="step-num">04</div><h3>Поставка</h3><p>Поставляем комплект на объект и выполняем гарантийный сервис.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATALOG ============ -->
+<section class="section catalog" id="catalog">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">каталог</p>
+      <h2 class="section-title">Комплекты товаров</h2>
+      <p class="section-sub">Выберите раздел — комплекты «Звёздное небо» или светодиодные светильники для хамама.</p>
+    </div>
+    <div class="catalog-tabs reveal" id="catalogTabs">
+  <button class="catalog-tab active" data-type="kit" type="button">Комплекты «Звёздное небо»</button>
+  <button class="catalog-tab" data-type="lamp" type="button">Светодиодные светильники</button>
+</div>
+
+    <div class="catalog-banner reveal">
+      <span class="dot-pulse"></span>
+      <p><strong>Модельный ряд «Звёздного неба» для хамама.</strong> От 75 до 500 точек, с постоянным или цветным мерцающим свечением.</p>
+    </div>
+
+               <div class="catalog-filters reveal" id="catalogFilters">
+      <div class="filter-group filter-price">
+        <label class="filter-label">Цена</label>
+        <div class="price-range" id="priceRange">
+          <div class="price-track"><div class="price-track-fill" id="priceTrackFill"></div></div>
+          <input type="range" id="priceMin" step="50">
+          <input type="range" id="priceMax" step="50">
+        </div>
+        <div class="price-values"><span id="priceMinLabel"></span><span>—</span><span id="priceMaxLabel"></span></div>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label">Точек свечения</label>
+        <div class="filter-chips" id="pointsFilter">
+          <label class="chip"><input type="checkbox" value="75"><span>75</span></label>
+          <label class="chip"><input type="checkbox" value="100"><span>100</span></label>
+          <label class="chip"><input type="checkbox" value="200"><span>200</span></label>
+          <label class="chip"><input type="checkbox" value="300"><span>300</span></label>
+          <label class="chip"><input type="checkbox" value="400"><span>400</span></label>
+          <label class="chip"><input type="checkbox" value="500"><span>500</span></label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label">Эффект свечения</label>
+        <div class="filter-chips" id="effectFilter">
+          <label class="chip"><input type="checkbox" value="constant"><span>Постоянное</span></label>
+          <label class="chip"><input type="checkbox" value="flicker"><span>С мерцанием</span></label>
+          <label class="chip"><input type="checkbox" value="rgb"><span>Цветное (RGB)</span></label>
+        </div>
+      </div>
+      <button class="filter-reset" id="filterReset" type="button">Сбросить фильтры</button>
+    </div>
+
+    <!-- Фильтр для светильников — ОТДЕЛЬНЫЙ блок, вне #catalogFilters -->
+    <div class="catalog-filters reveal" id="lampFilters" style="display:none;">
+      <div class="filter-group">
+        <label class="filter-label">Мощность</label>
+        <div class="filter-chips" id="powerFilter">
+          <label class="chip"><input type="checkbox" value="1"><span>1 Вт</span></label>
+          <label class="chip"><input type="checkbox" value="3"><span>3 Вт</span></label>
+          <label class="chip"><input type="checkbox" value="5"><span>5 Вт</span></label>
+        </div>
+      </div>
+      <button class="filter-reset" id="lampFilterReset" type="button">Сбросить фильтры</button>
+    </div>
+
+    <p class="catalog-empty" id="catalogEmpty" style="display:none;">Ничего не найдено под выбранные фильтры — попробуйте расширить диапазон цены или снять часть отметок.</p>
+    ...
+
+    <div class="catalog-collapse" id="catalogCollapse">
+      <div class="product-grid" id="productGrid"></div>
+      <div class="catalog-fade" id="catalogFade"></div>
+    </div>
+    <button class="catalog-toggle" id="catalogToggle" style="display:none;">
+      <span id="catalogToggleText">Показать весь каталог</span>
+      <span class="chevron"></span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ CONSTRUCTOR ============ -->
+<section class="section" id="constructor">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">персональный проект</p>
+      <h2 class="section-title">Сконструируй своё звёздное небо</h2>
+      <p class="section-sub">Задайте параметры — получите приблизительную стоимость и сразу добавьте в корзину.</p>
+    </div>
+    <div class="constructor-wrap">
+      <!-- LEFT: controls -->
+      <div class="ctor-panel">
+
+        <div class="ctor-field reveal" style="--d:.05s">
+          <div class="ctor-label-row">
+            <span class="ctor-label">Количество звёзд</span>
+            <span class="ctor-value" id="ctorStarsVal">150</span>
+          </div>
+          <input type="range" class="ctor-range" id="ctorStars" min="75" max="500" step="25" value="150">
+          <p style="font-size:12px;color:var(--text-faint);margin-top:4px;">75 — 500 волокон</p>
+        </div>
+
+        <div class="ctor-field reveal" style="--d:.1s">
+          <div class="ctor-label-row">
+            <span class="ctor-label">Эффект мерцания</span>
+          </div>
+          <div class="ctor-chips" id="ctorEffectChips">
+            <button type="button" class="ctor-chip active" data-effect="constant">Постоянный свет</button>
+            <button type="button" class="ctor-chip" data-effect="flicker">Мерцание</button>
+            <button type="button" class="ctor-chip" data-effect="rgb">RGB смена цвета</button>
+          </div>
+        </div>
+
+        <div class="ctor-field reveal" style="--d:.2s">
+          <div class="ctor-label-row">
+            <span class="ctor-label">Пожелания</span>
+          </div>
+          <textarea class="ctor-textarea" id="ctorComment" placeholder="Цвет подсветки, форма потолка, особые требования…"></textarea>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: price -->
+      <div class="ctor-preview-wrap reveal-scale" style="--d:.1s">
+        <div class="ctor-price-panel">
+          <div class="ctor-price-row">
+            <span class="ctor-price-label">Ориентировочная стоимость</span>
+          </div>
+          <div class="ctor-price-row">
+            <span class="ctor-price-big" id="ctorPrice">13 350 ₽</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-faint);line-height:1.5;" id="ctorSpec">
+            150 звёзд · постоянный свет
+          </div>
+          <p style="font-size:11px;color:var(--text-faint);line-height:1.5;margin-top:8px;">* Цена приблизительная. Точная стоимость рассчитывается индивидуально — уточните у менеджера.</p>
+          <button class="ctor-add-btn" id="ctorAddBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;flex-shrink:0"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+            Добавить в корзину
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTO GRID ============ -->
+<section class="section" id="inspiration" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">для вдохновения</p>
+      <h2 class="section-title">Как звёздное небо смотрится в интерьере хамама</h2>
+      <p class="section-sub">Подборка примеров — ориентир по стилю.</p>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-tile reveal-scale" style="--d:.05s"><img src="https://i.pinimg.com/1200x/16/22/cd/1622cdd0f91c77dd9de1c1f3e6caee22.jpg" alt="Звёздное небо в хамаме — пример" loading="lazy" decoding="async"></div>
+      <div class="photo-tile reveal-scale" style="--d:.1s"><img src="https://i.pinimg.com/1200x/3d/95/87/3d958710745b73dc111bfd276996e46b.jpg" alt="Звёздное небо в хамаме — пример" loading="lazy" decoding="async"></div>
+      <div class="photo-tile reveal-scale" style="--d:.15s"><img src="https://i.pinimg.com/1200x/22/df/de/22dfde3f694e0c4ee93fa61b8c2cd578.jpg" alt="Звёздное небо в хамаме — пример" loading="lazy" decoding="async"></div>
+      <div class="photo-tile reveal-scale" style="--d:.2s"><img src="https://i.pinimg.com/1200x/98/51/67/98516736ffc84333c5f75f60a4621642.jpg" alt="Звёздное небо в хамаме — пример" loading="lazy" decoding="async"></div>
+      <div class="photo-tile reveal-scale" style="--d:.25s"><img src="https://i.pinimg.com/1200x/93/0d/9d/930d9d55e9bcd71ee8fc68e2f800fbda.jpg" alt="Звёздное небо в хамаме — пример" loading="lazy" decoding="async"></div>
+      <div class="photo-tile reveal-scale" style="--d:.3s"><img src="https://kurna-tut.ru/projectsimg/cbd0cfce401cd7acf7b42da5a2e73a7526872f24.jpeg" alt="Звёздное небо в хамаме — пример" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <p class="kicker" style="justify-content:center;">вопросы и ответы</p>
+      <h2 class="section-title">Всё, что нужно знать перед заказом</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <button class="faq-q"><span>Не перегреется ли оптоволокно в хамаме?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Нет. Оптоволоконная нить не проводит ток и не нагревается. Источник света (LED-проектор) выносится за пределы парной, в техническую зону с нормальной температурой.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Сколько служит система звёздного неба?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Волокно практически не деградирует и служит десятилетиями. LED-проектор — расходный источник света, но рассчитан на многие годы работы и легко заменяется без демонтажа потолка.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Можно ли сделать своё созвездие или логотип?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Да, расположение точек проектируется индивидуально — созвездие, инициалы или логотип заведения.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Каковы сроки поставки?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Изготавливаем комплект по утверждённым размерам и количеству точек. Сроки уточняются индивидуально при оформлении заказа.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Нужно ли обслуживание после установки?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Система практически не требует обслуживания. При необходимости удалённо консультируем и выполняем сервис в рамках гарантии.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTS ============ -->
+<section class="section contacts" id="contacts">
+  <div class="container contacts-grid">
+    <div class="reveal">
+      <p class="kicker">контакты</p>
+      <h2 class="section-title" style="margin-bottom:36px;">Обсудим ваш проект</h2>
+
+      <div class="contact-line">
+        <div class="icon-square"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2z"/></svg></div>
+        <div><h4>Телефон</h4><a href="tel:+79112394045">+7 (911) 239-40-45</a></div>
+      </div>
+      <div class="contact-line">
+        <div class="icon-square"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg></div>
+        <div><h4>Email</h4><a href="mailto:studiovolokno@mail.ru">studiovolokno@mail.ru</a></div>
+      </div>
+      <div class="contact-line">
+        <div class="icon-square"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div><h4>Город</h4><span>Санкт-Петербург</span></div>
+      </div>
+      <div class="social-row">
+        <a href="https://max.ru/join/iXHnCtWNOH36ctcSRx6RweDx_U7dgk-0sfL1UICfko8" target="_blank" rel="noopener" class="icon-btn" aria-label="MAX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l1.4-4.4A8.5 8.5 0 1 1 8 19.6z"/></svg></a>
+        <a href="https://t.me/lumminagroup" target="_blank" rel="noopener" class="icon-btn" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 4L2.5 11.6c-1 .4-1 1.8.1 2.1l4.6 1.5 1.8 5.6c.3 1 1.6 1.2 2.2.3l2.6-3.6 4.7 3.5c.9.6 2.1.1 2.3-1L22 5.2c.2-1-.9-1.8-1.8-1.2z"/></svg></a>
+        <a href="https://ru.pinterest.com/studiovolokno/" target="_blank" rel="noopener" class="icon-btn" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9.5 18c.7-2.5 1.3-4.6 1.7-6.6a2.6 2.6 0 1 1 2.6 2.6c-.8 0-1.5-.3-2-.8"/></svg></a>
+      </div>
+    </div>
+
+    <form class="form-card reveal" style="--d:.1s" id="contactForm">
+      <div class="field"><label>Имя</label><input type="text" name="name" required placeholder="Как к вам обращаться"></div>
+      <div class="field"><label>Телефон</label><input type="tel" name="phone" required placeholder="+7 ("></div>
+      <div class="field"><label>Сообщение</label><textarea name="message" placeholder="Расскажите о вашем хамаме — площадь купола, пожелания"></textarea></div>
+      <button type="submit" class="btn btn-gold btn-block">Отправить заявку</button>
+      <p class="form-note">Отправляя заявку, вы соглашаетесь на обработку персональных данных</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo" aria-label="VOLOKNOSTARS">
+          <img class="logo-img" src="https://i.ibb.co/TBd0Z8zT/4-fotor-bg-remover-20260705152529.png" alt="VOLOKNOSTARS">
+        </a>
+        <p>Оптоволоконное звёздное небо ручной сборки для хамама, бани и спа.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Навигация</h5>
+        <ul>
+          <li><a href="#why">О технологии</a></li>
+          <li><a href="#preview">Как это выглядит</a></li>
+          <li><a href="#catalog">Каталог</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Информация</h5>
+        <ul>
+          <li><a href="#faq">Вопросы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Контакты</h5>
+        <ul>
+          <li><a href="tel:+79112394045">+7 (911) 239-40-45</a></li>
+          <li><a href="mailto:studiovolokno@mail.ru">studiovolokno@mail.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> voloknostars. Все права защищены.</span>
+      <span>Звёзды на этом сайте — интерактивная имитация продукта</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Корзина</h3>
+    <button class="cart-close" id="cartCloseBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cart-total"><span class="lbl">Итого</span><span class="val" id="cartTotal">0 ₽</span></div>
+    <button class="btn btn-gold btn-block" id="checkoutBtn">Оформить заказ</button>
+  </div>
+</aside>
+
+<!-- ============ PRODUCT MODAL ============ -->
+<div class="modal-wrap" id="productModal">
+  <div class="modal-box">
+    <button class="modal-close" data-close-modal><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="modal-grid">
+      <div class="modal-media"><canvas id="modalCanvas"></canvas><img id="modalImage" alt="" style="display:none;"></div>
+      <div class="modal-info">
+        <p class="kicker">товар</p>
+        <h2 id="modalTitle"></h2>
+        <p class="desc" id="modalDesc"></p>
+        <ul class="modal-specs" id="modalSpecs"></ul>
+        <div class="modal-price-row">
+          <div class="price" id="modalPrice"></div>
+        </div>
+        <button class="btn btn-gold btn-block" id="modalAddBtn">Добавить в корзину</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECKOUT MODAL ============ -->
+<div class="modal-wrap" id="checkoutModal">
+  <div class="modal-box" style="max-width:520px;">
+    <button class="modal-close" data-close-modal><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div id="checkoutFormWrap" class="modal-form">
+      <h2>Оформление заказа</h2>
+      <p class="sub">Оплата не потребуется — мы свяжемся с вами, чтобы согласовать детали и точную стоимость.</p>
+      <form id="checkoutForm">
+        <div class="field"><label>Имя *</label><input type="text" name="co_name" required placeholder="Ваше имя"></div>
+        <div class="field"><label>Телефон *</label><input type="tel" name="co_phone" required placeholder="+7 ("></div>
+        <div class="field"><label>Адрес объекта *</label><input type="text" name="co_address" required placeholder="Город, адрес хамама"></div>
+        <div class="field"><label>Email *</label><input type="email" name="co_email" required placeholder="your@email.com"></div>
+        <div class="field"><label>Дополнительная информация</label><textarea name="co_comment" placeholder="Пожелания к проекту"></textarea></div>
+        <button type="submit" class="btn btn-gold btn-block" id="checkoutSubmitBtn">Отправить заказ</button>
+        <div id="captchaStep" style="display:none; margin-top:16px;">
+          <div class="field">
+            <label id="captchaLabel" style="font-weight:600;">Подтвердите, что вы не робот</label>
+            <input type="text" id="captchaInput" inputmode="numeric" placeholder="Введите ответ" autocomplete="off">
+          </div>
+          <p id="captchaError" style="display:none; color:#e53e3e; font-size:13px; margin:-8px 0 12px;">Неверный ответ — попробуйте ещё раз</p>
+          <button type="button" class="btn btn-gold btn-block" id="captchaConfirmBtn">Подтвердить и отправить</button>
+        </div>
+      </form>
+    </div>
+    <div id="checkoutSuccess" class="success-view" style="display:none;">
+      <div class="success-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></div>
+      <h3>Заявка отправлена</h3>
+      <p>Спасибо! Мы свяжемся с вами в ближайшее время, чтобы обсудить проект и точную стоимость.</p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg><span id="toastText">Готово</span></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===================== STARFIELD ENGINE ===================== */
+  function StarField(canvas, opts){
+    opts = opts || {};
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var stars = [];
+    var w=0, h=0;
+    var mx=0, my=0;
+    var running = true;
+
+    var density = opts.density || 0.00022;
+    var colors = opts.colors || ['#eef1fa','#f0c479','#a7e8ff'];
+    var twinkleSpeed = opts.twinkleSpeed || 1;
+    var parallax = !!opts.parallax;
+    var maxRadius = opts.maxRadius || 1.6;
+    var glow = opts.glow !== false;
+
+    function resize(){
+      var rect = canvas.getBoundingClientRect();
+      w = rect.width; h = rect.height;
+      canvas.width = Math.max(1, Math.floor(w*dpr));
+      canvas.height = Math.max(1, Math.floor(h*dpr));
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      buildStars();
+    }
+
+    function buildStars(){
+      var count = Math.max(24, Math.floor(w*h*density));
+      stars = [];
+      for(var i=0;i<count;i++){
+        stars.push({
+          x: Math.random()*w,
+          y: Math.random()*h,
+          r: Math.random()*maxRadius+0.35,
+          baseAlpha: Math.random()*0.6+0.35,
+          phase: Math.random()*Math.PI*2,
+          speed: (Math.random()*0.6+0.4)*twinkleSpeed,
+          color: colors[Math.floor(Math.random()*colors.length)]
+        });
+      }
+    }
+
+    var t0 = performance.now();
+    function frame(t){
+      if(!running) return;
+      var dt = (t - t0)/1000; t0 = t;
+      ctx.clearRect(0,0,w,h);
+
+      var offX = 0, offY = 0;
+      if(parallax){ offX = mx*4; offY = my*4; }
+
+      for(var i=0;i<stars.length;i++){
+        var s = stars[i];
+        var a = s.baseAlpha + Math.sin(t/1000*s.speed + s.phase)*0.35;
+        a = Math.max(0.05, Math.min(1, a));
+        ctx.beginPath();
+        ctx.fillStyle = s.color;
+        ctx.globalAlpha = a;
+        ctx.arc(s.x+offX*(s.r/maxRadius), s.y+offY*(s.r/maxRadius), s.r, 0, Math.PI*2);
+        ctx.fill();
+        if(glow && s.r > maxRadius*0.7){
+          ctx.globalAlpha = a*0.18;
+          ctx.beginPath();
+          ctx.arc(s.x+offX*(s.r/maxRadius), s.y+offY*(s.r/maxRadius), s.r*4, 0, Math.PI*2);
+          ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      requestAnimationFrame(frame);
+    }
+
+    var ro = new ResizeObserver(function(){ resize(); });
+    ro.observe(canvas);
+    resize();
+    requestAnimationFrame(frame);
+
+    if(parallax){
+      window.addEventListener('mousemove', function(e){
+        mx = (e.clientX / window.innerWidth - 0.5);
+        my = (e.clientY / window.innerHeight - 0.5);
+      });
+    }
+
+    return {
+      destroy:function(){ running=false; ro.disconnect(); }
+    };
+  }
+
+  /* ===================== INIT CANVASES ===================== */
+  StarField(document.getElementById('heroCanvas'), {density:0.00026, parallax:true, maxRadius:1.8, twinkleSpeed:.8});
+
+  var modalCanvasField = null;
+  function initModalCanvas(colors, twinkleSpeed){
+    if(modalCanvasField) modalCanvasField.destroy();
+    modalCanvasField = StarField(document.getElementById('modalCanvas'), {density:0.00034, maxRadius:1.6, colors:colors, twinkleSpeed:twinkleSpeed});
+  }
+
+  var currentModalProduct = null;
+  function openProductModal(product){
+    currentModalProduct = product;
+    document.getElementById('modalTitle').textContent = product.name;
+    document.getElementById('modalDesc').textContent = product.desc;
+    var specsHtml = product.specs.map(function(s){ return '<li><span>'+s[0]+'</span><span>'+s[1]+'</span></li>'; }).join('');
+    document.getElementById('modalSpecs').innerHTML = specsHtml;
+    var priceHtml = (product.oldPrice ? '<span class="price-old">'+fmt(product.oldPrice)+'</span>' : '') + fmt(product.price);
+    document.getElementById('modalPrice').innerHTML = priceHtml;
+    openModal(productModal);
+    var modalCanvasEl = document.getElementById('modalCanvas');
+    var modalImageEl = document.getElementById('modalImage');
+    modalCanvasEl.closest('.modal-media').classList.toggle('night', !product.image);
+    if(product.image){
+      if(modalCanvasField){ modalCanvasField.destroy(); modalCanvasField = null; }
+      modalCanvasEl.style.display = 'none';
+      modalImageEl.src = product.image;
+      modalImageEl.alt = product.name;
+      modalImageEl.style.display = 'block';
+    } else {
+      modalImageEl.style.display = 'none';
+      modalCanvasEl.style.display = 'block';
+      initModalCanvas(product.colors, product.twinkleSpeed);
+    }
+  }
+
+  /* ===================== PRODUCTS ===================== */
+  var PRODUCTS = [
+    {
+      id:'zn75',
+      name:'Комплект «Звёздное небо» для хамама на 75 точек постоянного свечения',
+      desc:'75 точек · для 1–2 м² · постоянный монохромный свет, 5 цветов на выбор',
+      price:12150,
+      oldPrice:19418,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','75'],
+        ['Площадь применения','1–2 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 3,0 м<br>25 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Проектор','Монохромный, постоянное свечение'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗН75']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-21.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'zn100',
+      name:'Комплект «Звёздное небо» для хамама на 100 точек постоянного свечения',
+      desc:'100 точек · для 2–3 м² · постоянный монохромный свет, 5 цветов на выбор',
+      price:13350,
+      oldPrice:21366,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','100'],
+        ['Площадь применения','2–3 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 3,0 м<br>50 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Проектор','Монохромный, постоянное свечение'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗН100']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-22.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'zn200',
+      name:'Комплект «Звёздное небо» для хамама на 200 точек постоянного свечения',
+      desc:'200 точек · для 4–6 м² · постоянный монохромный свет, 5 цветов на выбор',
+      price:20250,
+      oldPrice:32261,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','200'],
+        ['Площадь применения','4–6 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 4,0 м<br>50 шт. × 3,5 м<br>50 шт. × 3,0 м<br>50 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Проектор','Монохромный, постоянное свечение'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗН200']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-23.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'znst75',
+      name:'Комплект «Звёздное небо» для хамама на 75 точек с мерцанием',
+      desc:'75 точек · для 1–2 м² · монохромный свет с мерцанием, 5 цветов на выбор',
+      price:26100,
+      oldPrice:43815,
+      effect:'flicker',
+      specs:[
+        ['Точек свечения','75'],
+        ['Площадь применения','1–2 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 3,0 м<br>25 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗНСТ75']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-17.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'znst100',
+      name:'Комплект «Звёздное небо» для хамама на 100 точек с мерцанием',
+      desc:'100 точек · для 2–3 м² · монохромный свет с мерцанием, 5 цветов на выбор',
+      price:27345,
+      oldPrice:49067,
+      effect:'flicker',
+      specs:[
+        ['Точек свечения','100'],
+        ['Площадь применения','2–3 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 3,0 м<br>50 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗНСТ100']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-16.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'zn300',
+      name:'Комплект «Звёздное небо» для хамама на 300 точек постоянного свечения',
+      desc:'300 точек · для 6–8 м² · постоянный монохромный свет, 5 цветов на выбор',
+      price:31650,
+      oldPrice:52568,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','300'],
+        ['Площадь применения','6–8 м²'],
+        ['Оптоволокно Ø 0,75 мм','75 шт. × 4,5 м<br>75 шт. × 4,0 м<br>75 шт. × 3,5 м<br>75 шт. × 3,0 м'],
+        ['Проектор','Монохромный, постоянное свечение'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗН300']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-24.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'znst200',
+      name:'Комплект «Звёздное небо» для хамама на 200 точек с мерцанием',
+      desc:'200 точек · для 4–6 м² · монохромный свет с мерцанием, 5 цветов на выбор',
+      price:34200,
+      oldPrice:61320,
+      effect:'flicker',
+      specs:[
+        ['Точек свечения','200'],
+        ['Площадь применения','4–6 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 4,0 м<br>50 шт. × 3,5 м<br>50 шт. × 3,0 м<br>50 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗНСТ200']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-15.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'zn400',
+      name:'Комплект «Звёздное небо» для хамама на 400 точек постоянного свечения',
+      desc:'400 точек · для 8–10 м² · монохромный свет, 5 цветов на выбор',
+      price:41100,
+      oldPrice:61320,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','400'],
+        ['Площадь применения','8–10 м²'],
+        ['Оптоволокно Ø 0,75 мм','95 шт. × 5,0 м<br>70 шт. × 4,5 м<br>70 шт. × 4,0 м<br>70 шт. × 3,5 м<br>95 шт. × 3,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗН400']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-26.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'3hrgb75',
+      name:'Комплект «Звёздное небо» для хамама на 75 точек цветного свечения RGB',
+      desc:'75 точек · для 1–2 м² · RGB-проектор с мерцанием, пульт ДУ или сенсорная панель',
+      price:43050,
+      oldPrice:73574,
+      effect:'rgb',
+      specs:[
+        ['Точек свечения','75'],
+        ['Площадь применения','1–2 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 3,0 м<br>50 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Проектор','RGB, мерцание, дистанционное управление'],
+        ['Управление','Пульт ДУ или сенсорная панель 80×80 мм (чёрный/белый)'],
+        ['Артикул','3HRGB75']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-9.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'3hrgb100',
+      name:'Комплект «Звёздное небо» для хамама на 100 точек цветного свечения RGB',
+      desc:'100 точек · для 2–3 м² · RGB-проектор с мерцанием, пульт ДУ или сенсорная панель',
+      price:44250,
+      oldPrice:76199,
+      effect:'rgb',
+      specs:[
+        ['Точек свечения','100'],
+        ['Площадь применения','2–3 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 3,0 м<br>50 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Проектор','RGB, мерцание, дистанционное управление'],
+        ['Управление','Пульт ДУ или сенсорная панель 80×80 мм (чёрный/белый)'],
+        ['Артикул','3HRGB100']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-10.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'znst300',
+      name:'Комплект «Звёздное небо» для хамама на 300 точек с мерцанием',
+      desc:'300 точек · для 6–8 м² · монохромный свет с мерцанием, 5 цветов на выбор',
+      price:45525,
+      oldPrice:73178,
+      effect:'flicker',
+      specs:[
+        ['Точек свечения','300'],
+        ['Площадь применения','6–8 м²'],
+        ['Оптоволокно Ø 0,75 мм','75 шт. × 4,5 м<br>75 шт. × 4,0 м<br>75 шт. × 3,5 м<br>75 шт. × 3,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗНСТ300']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-20.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'zn500',
+      name:'Комплект «Звёздное небо» для хамама на 500 точек постоянного свечения',
+      desc:'500 точек · для 10–12 м² · монохромный свет, 5 цветов на выбор',
+      price:49200,
+      oldPrice:80576,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','500'],
+        ['Площадь применения','10–12 м²'],
+        ['Оптоволокно Ø 0,75 мм','100 шт. × 5,0 м<br>100 шт. × 4,5 м<br>100 шт. × 4,0 м<br>100 шт. × 3,5 м<br>100 шт. × 3,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗН500']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-25.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'3hrgb200',
+      name:'Комплект «Звёздное небо» для хамама на 200 точек цветного свечения RGB',
+      desc:'200 точек · для 4–6 м² · RGB-проектор с мерцанием, пульт ДУ или сенсорная панель',
+      price:51150,
+      oldPrice:84077,
+      effect:'rgb',
+      specs:[
+        ['Точек свечения','200'],
+        ['Площадь применения','4–6 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 4,0 м<br>50 шт. × 3,5 м<br>50 шт. × 3,0 м<br>50 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Проектор','RGB, мерцание, дистанционное управление'],
+        ['Управление','Пульт ДУ или сенсорная панель 80×80 мм (чёрный/белый)'],
+        ['Артикул','3HRGB200']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-11.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'znst400',
+      name:'Комплект «Звёздное небо» для хамама на 400 точек с мерцанием',
+      desc:'400 точек · для 8–10 м² · монохромный свет с мерцанием, 5 цветов на выбор',
+      price:55125,
+      oldPrice:84077,
+      effect:'flicker',
+      specs:[
+        ['Точек свечения','400'],
+        ['Площадь применения','8–10 м²'],
+        ['Оптоволокно Ø 0,75 мм','95 шт. × 5,0 м<br>70 шт. × 4,5 м<br>70 шт. × 4,0 м<br>70 шт. × 3,5 м<br>95 шт. × 3,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗНСТ400']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-18.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'zn100-10',
+      name:'Комплект «Звёздное небо» для хамама на 100 точек + 10 кристаллов с мерцанием',
+      desc:'100 точек + 10 кристаллов · для 2–4 м² · монохром с мерцанием, 5 цветов',
+      price:57200,
+      oldPrice:69121,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','100'],
+        ['Кристаллов','10'],
+        ['Площадь применения','2–4 м²'],
+        ['Оптоволокно Ø 0,75 мм','25 шт. × 3,0 м<br>50 шт. × 2,5 м<br>25 шт. × 2,0 м'],
+        ['Кабель с кристаллом Ø 3 мм','3 шт. × 3,0 м<br>4 шт. × 2,5 м<br>3 шт. × 2,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','3Н100+10']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/04/-%D0%BD%D0%B5%D0%B1%D0%BE-100-%D1%82%D0%BE%D1%87%D0%B5%D0%BA-10-%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BB%D0%BB%D0%BE%D0%B2-e1619174562197.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479']
+    },
+    {
+      id:'3hrgb300',
+      name:'Комплект «Звёздное небо» для хамама на 300 точек цветного свечения RGB',
+      desc:'300 точек · для 6–8 м² · RGB-проектор с мерцанием, пульт ДУ или сенсорная панель',
+      price:62520,
+      oldPrice:101580,
+      effect:'rgb',
+      specs:[
+        ['Точек свечения','300'],
+        ['Площадь применения','6–8 м²'],
+        ['Оптоволокно Ø 0,75 мм','75 шт. × 4,5 м<br>75 шт. × 4,0 м<br>75 шт. × 3,5 м<br>75 шт. × 3,0 м'],
+        ['Проектор','RGB, мерцание, дистанционное управление'],
+        ['Управление','Пульт ДУ или сенсорная панель 80×80 мм (чёрный/белый)'],
+        ['Артикул','3HRGB300']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-12.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'znst500',
+      name:'Комплект «Звёздное небо» для хамама на 500 точек с мерцанием',
+      desc:'500 точек · для 10–12 м² · монохромный свет с мерцанием, 5 цветов на выбор',
+      price:63270,
+      oldPrice:106832,
+      effect:'flicker',
+      specs:[
+        ['Точек свечения','500'],
+        ['Площадь применения','10–12 м²'],
+        ['Оптоволокно Ø 0,75 мм','100 шт. × 5,0 м<br>100 шт. × 4,5 м<br>100 шт. × 4,0 м<br>100 шт. × 3,5 м<br>100 шт. × 3,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗНСТ500']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-19.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'3hrgb400',
+      name:'Комплект «Звёздное небо» для хамама на 400 точек цветного свечения RGB',
+      desc:'400 точек · для 8–10 м² · RGB-проектор с мерцанием, пульт ДУ или сенсорная панель',
+      price:72000,
+      oldPrice:123000,
+      effect:'rgb',
+      specs:[
+        ['Точек свечения','400'],
+        ['Площадь применения','8–10 м²'],
+        ['Оптоволокно Ø 0,75 мм','95 шт. × 5,0 м<br>70 шт. × 4,5 м<br>70 шт. × 4,0 м<br>70 шт. × 3,5 м<br>95 шт. × 3,0 м'],
+        ['Проектор','RGB, мерцание, дистанционное управление'],
+        ['Управление','Пульт ДУ или сенсорная панель 80×80 мм (чёрный/белый)'],
+        ['Артикул','3HRGB400']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-13.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'3hrgb500',
+      name:'Комплект «Звёздное небо» для хамама на 500 точек цветного свечения RGB',
+      desc:'500 точек · для 10–12 м² · RGB-проектор с мерцанием, пульт ДУ или сенсорная панель',
+      price:80175,
+      oldPrice:127632,
+      effect:'rgb',
+      specs:[
+        ['Точек свечения','500'],
+        ['Площадь применения','10–12 м²'],
+        ['Оптоволокно Ø 0,75 мм','100 шт. × 5,0 м<br>100 шт. × 4,5 м<br>100 шт. × 4,0 м<br>100 шт. × 3,5 м<br>100 шт. × 3,0 м'],
+        ['Проектор','RGB, мерцание, дистанционное управление'],
+        ['Управление','Пульт ДУ или сенсорная панель 80×80 мм (чёрный/белый)'],
+        ['Артикул','3HRGB500']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-14.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+    {
+      id:'zn200-15',
+      name:'Комплект «Звёздное небо» для хамама на 200 точек + 15 кристаллов с мерцанием',
+      desc:'200 точек + 15 кристаллов · для 2–4 м² · монохром с мерцанием, 5 цветов',
+      price:81100,
+      oldPrice:88492,
+      effect:'flicker',
+      specs:[
+        ['Точек свечения','200'],
+        ['Кристаллов','15'],
+        ['Площадь применения','2–4 м²'],
+        ['Оптоволокно Ø 0,75 мм','50 шт. × 3,5 м<br>50 шт. × 3,0 м<br>50 шт. × 2,5 м<br>50 шт. × 2,0 м'],
+        ['Кабель с кристаллом Ø 3 мм','4 шт. × 3,5 м<br>4 шт. × 3,0 м<br>4 шт. × 2,5 м<br>3 шт. × 2,0 м'],
+        ['Проектор','Монохромный с функцией мерцания'],
+        ['Цвет на выбор','тёплый белый / холодный белый / синий / красный / зелёный'],
+        ['Артикул','ЗН200+15']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/04/-%D0%BD%D0%B5%D0%B1%D0%BE-200-%D1%82%D0%BE%D1%87%D0%B5%D0%BA-15-%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BB%D0%BB%D0%BE%D0%B2-e1619174505637.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479']
+    },
+    {
+      id:'zn200-15-rgb',
+      name:'Комплект «Звёздное небо» для хамама на 200 точек + 15 кристаллов RGB',
+      desc:'200 точек + 15 кристаллов · для 2–4 м² · RGB с мерцанием и пультом ДУ',
+      price:98000,
+      oldPrice:106406,
+      effect:'rgb',
+      specs:[
+        ['Точек свечения','200'],
+        ['Кристаллов','15'],
+        ['Площадь применения','2–4 м²'],
+        ['Оптоволокно Ø 0,75 мм','50 шт. × 3,5 м<br>50 шт. × 3,0 м<br>50 шт. × 2,5 м<br>50 шт. × 2,0 м'],
+        ['Кабель с кристаллом Ø 3 мм','4 шт. × 3,5 м<br>4 шт. × 3,0 м<br>4 шт. × 2,5 м<br>3 шт. × 2,0 м'],
+        ['Проектор','RGB, мерцание, дистанционное управление'],
+        ['Управление','Пульт ДУ или сенсорная панель 80×80 мм (чёрный/белый)'],
+        ['Артикул','ЗН200+15-1']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/04/-%D0%BD%D0%B5%D0%B1%D0%BE-200-%D1%82%D0%BE%D1%87%D0%B5%D0%BA-15-%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BB%D0%BB%D0%BE%D0%B2-e1619174505637.jpg',
+      colors:['#eef1fa','#c084fc','#60a5fa','#f472b6','#facc15']
+    },
+        {
+      id:'pv1g',
+      type:'lamp',
+       power:1,
+      name:'Светодиодный светильник для хамама и турецкой бани PV-1DG (золото)',
+      desc:'Встраиваемый влагозащищённый светильник IP68, направленного света, монохромный свет',
+      price:3200,
+      oldPrice:4500,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','1 Вт'],
+        ['Световой поток','141 лм (холодный белый) / 132 лм (тёплый белый)'],
+        ['Угол свечения','120°'],
+        ['Рабочий ток','350 мА'],
+        ['Цвет корпуса','золото (PV-1G)'],
+        ['Артикул','PV-1G']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-41.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+        {
+      id:'pv1s',
+      type:'lamp',
+      power:1,
+      name:'Светодиодный светильник для хамама и турецкой бани PV-1DS (хром)',
+      desc:'Встраиваемый влагозащищённый светильник IP68, направленного света, монохромный свет',
+      price:3200,
+      oldPrice:4500,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','1 Вт'],
+        ['Световой поток','141 лм (холодный белый) / 132 лм (тёплый белый)'],
+        ['Угол свечения','120°'],
+        ['Рабочий ток','350 мА'],
+        ['Цвет корпуса','серебро (PV-1S)'],
+        ['Артикул','PV-1S']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-40.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+        {
+      id:'pv1w',
+      type:'lamp',
+      power:1,
+      name:'Светодиодный светильник для хамама и турецкой бани PV-1WG (золото)',
+      desc:'Встраиваемый влагозащищённый светильник IP68, рассеянного света, угол свечения 120°, монохромный свет',
+      price:3200,
+      oldPrice:4500,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','1 Вт (эквивалент 15 Вт лампы накаливания)'],
+        ['Световой поток','141 лм (холодный белый) / 132 лм (тёплый белый)'],
+        ['Угол свечения','120°'],
+        ['Рабочий ток','350 мА'],
+        ['Диаметр видимой части','40 мм'],
+        ['Длина светильника','55 мм'],
+        ['Глубина установки','не менее 60 мм'],
+        ['Срок службы','50 000 часов'],
+        ['Цвет корпуса','медь (PV-1 W)'],
+        ['Артикул','PV-1 W']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-42.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'pv1w-hrom',
+      type:'lamp',
+      power:1,
+      name:'Светодиодный светильник для хамама и турецкой бани PV-1WS (хром)',
+      desc:'Встраиваемый влагозащищённый светильник IP68, рассеянного света, угол свечения 120°, монохромный свет',
+      price:3200,
+      oldPrice:4500,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','1 Вт (эквивалент 15 Вт лампы накаливания)'],
+        ['Световой поток','141 лм (холодный белый) / 132 лм (тёплый белый)'],
+        ['Угол свечения','120°'],
+        ['Рабочий ток','350 мА'],
+        ['Диаметр видимой части','40 мм'],
+        ['Длина светильника','55 мм'],
+        ['Глубина установки','не менее 60 мм'],
+        ['Срок службы','50 000 часов'],
+        ['Цвет корпуса','хром (PV-1 W)'],
+        ['Артикул','PV-1 W']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-45.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'pv3',
+      type:'lamp',
+      power:3,
+      name:'Светодиодный светильник для хамама и турецкой бани PV-3WG (золото)',
+      desc:'Встраиваемый влагозащищённый светильник IP68, угол свечения 120°',
+      price:6000,
+      oldPrice:9000,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','3 Вт (эквивалент 40 Вт лампы накаливания)'],
+        ['Напряжение питания','12-24 VDC'],
+        ['Световой поток','423 лм (холодный белый) / 396 лм (тёплый белый)'],
+        ['Угол свечения','120°'],
+        ['Диаметр видимой части','75 мм'],
+        ['Длина светильника','55 мм'],
+        ['Глубина установки','60 мм'],
+        ['Цвет корпуса','золото (PV-3)'],
+        ['Артикул','PV-3']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-47.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'pv3-hrom',
+      type:'lamp',
+      power:3,
+      name:'Светодиодный светильник для хамама и турецкой бани PV-3WS (хром)',
+      desc:'Встраиваемый влагозащищённый светильник IP68, угол свечения 120°',
+      price:6000,
+      oldPrice:9000,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','3 Вт (эквивалент 40 Вт лампы накаливания)'],
+        ['Напряжение питания','12-24 VDC'],
+        ['Световой поток','423 лм (холодный белый) / 396 лм (тёплый белый)'],
+        ['Угол свечения','120°'],
+        ['Диаметр видимой части','75 мм'],
+        ['Длина светильника','55 мм'],
+        ['Глубина установки','60 мм'],
+        ['Цвет корпуса','хром (PV-3)'],
+        ['Артикул','PV-3']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-46.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+        {
+      id:'pv3b-gold',
+      type:'lamp',
+      power:5,
+      name:'Светодиодный светильник для хамама и турецкой бани PV-5WG (золото)',
+      desc:'Встраиваемый влагозащищённый светильник IP68, угол свечения 120°, повышенная яркость',
+      price:7150,
+      oldPrice:9500,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','5 Вт (эквивалент 60 Вт лампы накаливания)'],
+        ['Напряжение питания','12-24 VDC'],
+        ['Световой поток','540 лм (холодный белый) / 480 лм (тёплый белый)'],
+        ['Угол свечения','120°'],
+        ['Диаметр видимой части','75 мм'],
+        ['Длина светильника','55 мм'],
+        ['Цвет корпуса','золото (PV-3B)'],
+        ['Артикул','PV-3B']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-47.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'pv3b-hrom',
+      type:'lamp',
+      power:5,
+      name:'Светодиодный светильник для хамама и турецкой бани PV-5WS (хром)',
+      desc:'Встраиваемый влагозащищённый светильник IP68, угол свечения 120°, повышенная яркость',
+      price:7150,
+      oldPrice:9500,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','5 Вт (эквивалент 60 Вт лампы накаливания)'],
+        ['Напряжение питания','12-24 VDC'],
+        ['Световой поток','540 лм (холодный белый) / 480 лм (тёплый белый)'],
+        ['Угол свечения','120°'],
+        ['Диаметр видимой части','75 мм'],
+        ['Длина светильника','55 мм'],
+        ['Цвет корпуса','хром (PV-3B)'],
+        ['Артикул','PV-3B']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/h-46.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+        {
+      id:'decor-vostochny 5WG',
+      type:'lamp',
+      power:5,
+      name:'Светодиодный светильник Decor «Восточный» 5WG (золото)',
+      desc:'Влагозащищенный накладной светильник для хамама и турецкой бани, 5 Вт, IP67, декоративный восточный узор',
+      price:11980,
+      oldPrice:15000,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP67'],
+        ['Мощность','5 Вт'],
+        ['Напряжение питания','12 В постоянного тока'],
+        ['Световой поток','220 лм (тёплый белый) / 250 лм (холодный белый) / 235 лм (нейтральный белый)'],
+        ['Диаметр','210 мм'],
+        ['Толщина','25 мм'],
+        ['Материал','ABS пластик, термостойкое матовое оргстекло'],
+        ['Температурный диапазон','от -30 до +60 °C'],
+        ['Срок службы','30 000 часов'],
+        ['Цвет корпуса','золото (Decor «Восточный»)'],
+        ['Артикул','Decor-Восточный']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2024/06/DSC_2822.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'decor-vostochny 5WS',
+      type:'lamp',
+      power:5,
+      name:'Светодиодный светильник Decor «Восточный» 5WS (хром)',
+      desc:'Влагозащищенный накладной светильник для хамама и турецкой бани, 5 Вт, IP67, декоративный восточный узор',
+      price:11980,
+      oldPrice:15000,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','точечное освещение'],
+        ['Степень защиты','IP67'],
+        ['Мощность','5 Вт'],
+        ['Напряжение питания','12 В постоянного тока'],
+        ['Световой поток','220 лм (тёплый белый) / 250 лм (холодный белый) / 235 лм (нейтральный белый)'],
+        ['Диаметр','210 мм'],
+        ['Толщина','25 мм'],
+        ['Материал','ABS пластик, термостойкое матовое оргстекло'],
+        ['Температурный диапазон','от -30 до +60 °C'],
+        ['Срок службы','30 000 часов'],
+        ['Цвет корпуса','хром (Decor «Восточный»)'],
+        ['Артикул','Decor-Восточный']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2024/06/DSC_2832.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+        {
+      id:'decor-duo-gw1',
+      type:'lamp',
+      power:1,
+      name:'Светодиодный светильник для хамама и турецкой бани Decor Duo GW1',
+      desc:'Настенный влагозащищённый светильник IP68, направленный световой поток вверх и вниз, 1 Вт',
+      price:8350,
+      oldPrice:10500,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','декоративное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','1 Вт (аналог лампы накаливания 12 Вт)'],
+        ['Напряжение питания','12-24 VDC'],
+        ['Максимальный рабочий ток','350 мАп'],
+        ['Световой поток','141 лм (холодный белый) / 132 лм (тёплый белый)'],
+        ['Размер видимой части','80 мм × 40 мм × 20 мм'],
+        ['Диаметр посадочной втулки','28 мм'],
+        ['Глубина установки','не менее 60 мм'],
+        ['Материал корпуса','термо пластик'],
+        ['Цвет корпуса','серебро (GW1)'],
+        ['Срок службы светодиода','50 000 часов'],
+        ['Артикул','Decor Duo GW1']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/DUO-1.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'decor-duo-sw1',
+      type:'lamp',
+      power:1,
+      name:'Светодиодный светильник для хамама и турецкой бани Decor Duo SW1',
+      desc:'Настенный влагозащищённый светильник IP68, направленный световой поток вверх и вниз, 1 Вт',
+      price:8350,
+      oldPrice:10500,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','декоративное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','1 Вт (аналог лампы накаливания 12 Вт)'],
+        ['Напряжение питания','12-24 VDC'],
+        ['Максимальный рабочий ток','350 мАп'],
+        ['Световой поток','141 лм (холодный белый) / 132 лм (тёплый белый)'],
+        ['Размер видимой части','80 мм × 40 мм × 20 мм'],
+        ['Диаметр посадочной втулки','28 мм'],
+        ['Глубина установки','не менее 60 мм'],
+        ['Материал корпуса','термо пластик'],
+        ['Цвет корпуса','серебро (GW1)'],
+        ['Срок службы светодиода','50 000 часов'],
+        ['Артикул','Decor Duo GW1']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/DUO-2.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    },
+    {
+      id:'decor-duo-mw1',
+      type:'lamp',
+      power:1,
+      name:'Светодиодный светильник для хамама и турецкой бани Decor Duo MW1',
+      desc:'Настенный влагозащищённый светильник IP68, направленный световой поток вверх и вниз, 1 Вт',
+      price:8350,
+      oldPrice:10500,
+      effect:'constant',
+      specs:[
+        ['Точек свечения','1'],
+        ['Площадь применения','декоративное освещение'],
+        ['Степень защиты','IP68'],
+        ['Мощность','1 Вт (аналог лампы накаливания 12 Вт)'],
+        ['Напряжение питания','12-24 VDC'],
+        ['Максимальный рабочий ток','350 мАп'],
+        ['Световой поток','141 лм (холодный белый) / 132 лм (тёплый белый)'],
+        ['Размер видимой части','80 мм × 40 мм × 20 мм'],
+        ['Диаметр посадочной втулки','28 мм'],
+        ['Глубина установки','не менее 60 мм'],
+        ['Материал корпуса','термо пластик'],
+        ['Цвет корпуса','серебро (GW1)'],
+        ['Срок службы светодиода','50 000 часов'],
+        ['Артикул','Decor Duo GW1']
+      ],
+      image:'https://voloknostudio.ru/wp-content/uploads/2021/03/DUO-3.jpg',
+      colors:['#eef1fa','#f7dca6','#f0c479'],
+      twinkleSpeed:0.15
+    }
+  ];
+
+  var productGrid = document.getElementById('productGrid');
+  var productsById = {};
+  PRODUCTS.forEach(function(p){ productsById[p.id] = p; });
+
+  function buildProductCard(product, delay){
+    var el = document.createElement('div');
+    el.className = 'card reveal-scale';
+    el.style.setProperty('--d', delay+'s');
+    el.setAttribute('data-id', product.id);
+    el.setAttribute('data-type', product.type || 'kit');
+    var discount = product.oldPrice ? Math.round(100 - (product.price/product.oldPrice*100)) : null;
+    var media = product.image
+      ? '<img src="'+product.image+'" alt="'+product.name+'" loading="lazy" decoding="async">'
+      : '<canvas></canvas>';
+    el.innerHTML =
+      '<div class="card-media'+(product.image ? '' : ' night')+'">'+(discount!==null ? '<span class="card-badge sale">-'+discount+'%</span>' : '')+media+'</div>'+
+      '<div class="card-body">'+
+        '<h3>'+product.name+'</h3>'+
+        '<p class="desc">'+product.desc+'</p>'+
+        '<div class="card-foot">'+
+          '<div class="price">'+(product.oldPrice ? '<span class="price-old">'+fmt(product.oldPrice)+'</span>' : '')+fmt(product.price)+'</div>'+
+          '<div class="card-btns">'+
+            '<button class="icon-square" data-add="'+product.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg></button>'+
+            '<button class="icon-square" data-open="'+product.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg></button>'+
+          '</div>'+
+        '</div>'+
+      '</div>';
+    productGrid.appendChild(el);
+    if(!product.image){
+      StarField(el.querySelector('canvas'), {density:0.00045, maxRadius:1.6, colors:product.colors, twinkleSpeed:product.twinkleSpeed});
+    }
+  }
+
+  PRODUCTS.forEach(function(p, i){ buildProductCard(p, 0.05 + (i % 4)*0.05); });
+
+  /* ===================== CATALOG COLLAPSE (top 4 + expand) ===================== */
+  var CATALOG_VISIBLE = 4;
+  var catalogCollapse = document.getElementById('catalogCollapse');
+  var catalogToggle = document.getElementById('catalogToggle');
+  var catalogToggleText = document.getElementById('catalogToggleText');
+  var catalogExpanded = false;
+
+  function catalogCollapsedHeight(){
+    var cards = productGrid.querySelectorAll('.card');
+    if(cards.length <= CATALOG_VISIBLE) return null;
+    var wrapTop = catalogCollapse.getBoundingClientRect().top;
+    var lastVisible = cards[CATALOG_VISIBLE - 1].getBoundingClientRect();
+    return Math.ceil(lastVisible.bottom - wrapTop) + 24;
+  }
+
+  function applyCatalogCollapse(){
+    var h = catalogCollapsedHeight();
+    if(h === null){ catalogToggle.style.display = 'none'; catalogCollapse.style.maxHeight = 'none'; return; }
+    catalogToggle.style.display = 'inline-flex';
+    if(!catalogExpanded){ catalogCollapse.style.maxHeight = h + 'px'; }
+  }
+
+  if(PRODUCTS.length > CATALOG_VISIBLE){
+    requestAnimationFrame(function(){
+      applyCatalogCollapse();
+      catalogToggleText.textContent = 'Показать весь каталог ('+PRODUCTS.length+')';
+    });
+    catalogToggle.addEventListener('click', function(){
+      catalogExpanded = !catalogExpanded;
+      catalogCollapse.classList.toggle('expanded', catalogExpanded);
+      catalogToggle.classList.toggle('expanded', catalogExpanded);
+      if(catalogExpanded){
+        catalogCollapse.style.maxHeight = catalogCollapse.scrollHeight + 'px';
+        catalogToggleText.textContent = 'Свернуть каталог';
+      } else {
+        catalogCollapse.style.maxHeight = catalogCollapsedHeight() + 'px';
+        catalogToggleText.textContent = 'Показать весь каталог ('+PRODUCTS.length+')';
+        document.getElementById('catalog').scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+    window.addEventListener('resize', function(){
+      if(!catalogExpanded){ applyCatalogCollapse(); }
+      else { catalogCollapse.style.maxHeight = catalogCollapse.scrollHeight + 'px'; }
+    });
+  }
+
+  /* ===================== CATALOG FILTERS ===================== */
+  var PRICE_MIN = Math.min.apply(null, PRODUCTS.map(function(p){ return p.price; }));
+  var PRICE_MAX = Math.max.apply(null, PRODUCTS.map(function(p){ return p.price; }));
+  var priceMinInput = document.getElementById('priceMin');
+  var priceMaxInput = document.getElementById('priceMax');
+  var priceTrackFill = document.getElementById('priceTrackFill');
+  var priceMinLabel = document.getElementById('priceMinLabel');
+  var priceMaxLabel = document.getElementById('priceMaxLabel');
+  var pointsFilterEl = document.getElementById('pointsFilter');
+  var effectFilterEl = document.getElementById('effectFilter');
+  var filterResetBtn = document.getElementById('filterReset');
+  var catalogEmptyEl = document.getElementById('catalogEmpty');
+  var powerFilterEl = document.getElementById('powerFilter');
+var lampFilterResetBtn = document.getElementById('lampFilterReset');
+
+powerFilterEl.addEventListener('change', applyFilters);
+
+lampFilterResetBtn.addEventListener('click', function(){
+  powerFilterEl.querySelectorAll('input:checked').forEach(function(i){ i.checked = false; });
+  applyFilters();
+});
+
+  [priceMinInput, priceMaxInput].forEach(function(input){
+    input.min = PRICE_MIN; input.max = PRICE_MAX;
+  });
+  priceMinInput.value = PRICE_MIN;
+  priceMaxInput.value = PRICE_MAX;
+
+  function updatePriceTrack(){
+    var min = parseInt(priceMinInput.value, 10);
+    var max = parseInt(priceMaxInput.value, 10);
+    var span = PRICE_MAX - PRICE_MIN || 1;
+    var pctMin = (min - PRICE_MIN) / span * 100;
+    var pctMax = (max - PRICE_MIN) / span * 100;
+    priceTrackFill.style.left = pctMin + '%';
+    priceTrackFill.style.right = (100 - pctMax) + '%';
+    priceMinLabel.textContent = fmt(min);
+    priceMaxLabel.textContent = fmt(max);
+    priceMinInput.style.zIndex = min > (PRICE_MIN + PRICE_MAX) / 2 ? 3 : 2;
+    priceMaxInput.style.zIndex = priceMinInput.style.zIndex === '3' ? 2 : 3;
+  }
+/* ===================== CATALOG TABS ===================== */
+var currentCatalogType = 'kit';
+var catalogTabsEl = document.getElementById('catalogTabs');
+var catalogBannerEl = document.querySelector('.catalog-banner');
+
+catalogTabsEl.addEventListener('click', function(e){
+  var tab = e.target.closest('.catalog-tab');
+  if(!tab || tab.classList.contains('active')) return;
+
+  catalogTabsEl.querySelectorAll('.catalog-tab').forEach(function(t){ t.classList.remove('active'); });
+  tab.classList.add('active');
+  currentCatalogType = tab.dataset.type;
+
+  // Показываем фильтры и баннер только для комплектов
+ document.getElementById('catalogFilters').style.display = (currentCatalogType === 'kit') ? '' : 'none';
+document.getElementById('lampFilters').style.display  = (currentCatalogType === 'lamp') ? '' : 'none';
+  if(catalogBannerEl) catalogBannerEl.style.display = (currentCatalogType === 'kit') ? '' : 'none';
+
+  // Сброс фильтров и коллапса, чтобы каталог корректно перерисовался
+  catalogExpanded = false;
+  catalogCollapse.classList.remove('expanded');
+  catalogToggle.classList.remove('expanded');
+  catalogCollapse.style.maxHeight = 'none';
+
+  applyFilters();
+});
+  function currentFilterState(){
+  return {
+    min: parseInt(priceMinInput.value, 10),
+    max: parseInt(priceMaxInput.value, 10),
+    points: Array.prototype.map.call(pointsFilterEl.querySelectorAll('input:checked'), function(i){ return i.value; }),
+    effects: Array.prototype.map.call(effectFilterEl.querySelectorAll('input:checked'), function(i){ return i.value; }),
+    powers: Array.prototype.map.call(document.getElementById('powerFilter').querySelectorAll('input:checked'), function(i){ return i.value; })
+  };
+}
+
+  function productMatchesFilter(product, state){
+  var pType = product.type || 'kit';
+  if(pType !== currentCatalogType) return false;
+
+  if(product.price < state.min || product.price > state.max) return false;
+
+  if(currentCatalogType === 'kit'){
+    if(state.points.length && state.points.indexOf(String(product.specs[0][1])) === -1) return false;
+    if(state.effects.length && state.effects.indexOf(product.effect) === -1) return false;
+  }
+
+  if(currentCatalogType === 'lamp'){
+    if(state.powers.length && state.powers.indexOf(String(product.power)) === -1) return false;
+  }
+
+  return true;
+}
+
+  function applyFilters(){
+  var state = currentFilterState();
+  var active = state.min > PRICE_MIN || state.max < PRICE_MAX || state.points.length > 0 || state.effects.length > 0;
+  var visibleCount = 0;
+
+  productGrid.querySelectorAll('.card').forEach(function(card){
+    var product = productsById[card.getAttribute('data-id')];
+    var match = productMatchesFilter(product, state);
+    card.style.display = match ? '' : 'none';
+    if(match) visibleCount++;
+  });
+
+  // Пустое состояние — свой текст для каждого таба
+    if(visibleCount === 0){
+    catalogEmptyEl.style.display = 'block';
+    if(currentCatalogType === 'kit'){
+      catalogEmptyEl.textContent = 'Ничего не найдено под выбранные фильтры — попробуйте расширить диапазон цены или снять часть отметок.';
+    } else {
+      var anyPower = document.getElementById('powerFilter').querySelector('input:checked');
+      catalogEmptyEl.textContent = anyPower
+        ? 'Светильников с такой мощностью пока нет — попробуйте другую.'
+        : 'Светодиодные светильники скоро появятся в этом разделе.';
+    }
+  } else {
+    catalogEmptyEl.style.display = 'none';
+  }
+
+  // Для светильников — не применяем коллапс «первые 4»
+  if(currentCatalogType !== 'kit'){
+    catalogCollapse.style.maxHeight = 'none';
+    catalogToggle.style.display = 'none';
+    return;
+  }
+
+  if(active){
+    catalogCollapse.style.maxHeight = 'none';
+    catalogToggle.style.display = 'none';
+  } else if(PRODUCTS.length > CATALOG_VISIBLE){
+    catalogExpanded = false;
+    catalogCollapse.classList.remove('expanded');
+    catalogToggle.classList.remove('expanded');
+    catalogToggleText.textContent = 'Показать весь каталог ('+PRODUCTS.length+')';
+    requestAnimationFrame(applyCatalogCollapse);
+  }
+}
+
+    priceMinInput.addEventListener('input', function(){
+    if(parseInt(priceMinInput.value, 10) > parseInt(priceMaxInput.value, 10)){ priceMinInput.value = priceMaxInput.value; }
+    updatePriceTrack();
+    applyFilters();
+  });
+  priceMaxInput.addEventListener('input', function(){
+    if(parseInt(priceMaxInput.value, 10) < parseInt(priceMinInput.value, 10)){ priceMaxInput.value = priceMinInput.value; }
+    updatePriceTrack();
+    applyFilters();
+  });
+  pointsFilterEl.addEventListener('change', applyFilters);
+  effectFilterEl.addEventListener('change', applyFilters);
+  filterResetBtn.addEventListener('click', function(){
+    priceMinInput.value = PRICE_MIN;
+    priceMaxInput.value = PRICE_MAX;
+    pointsFilterEl.querySelectorAll('input:checked').forEach(function(i){ i.checked = false; });
+    effectFilterEl.querySelectorAll('input:checked').forEach(function(i){ i.checked = false; });
+    updatePriceTrack();
+    applyFilters();
+  });
+
+    updatePriceTrack();
+  applyFilters();
+
+  /* ===================== SCROLL REVEAL ===================== */
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal, .reveal-scale').forEach(function(el){ io.observe(el); });
+
+  /* ===================== HEADER SCROLL STATE ===================== */
+  var header = document.getElementById('siteHeader');
+  var mobileNavOpen = false;
+  function updateHeaderState(){
+    header.classList.toggle('scrolled', window.scrollY > 30 || mobileNavOpen);
+  }
+  window.addEventListener('scroll', updateHeaderState);
+
+  /* ===================== MOBILE NAV ===================== */
+  var burger = document.getElementById('burgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  function setMobileNav(open){
+    mobileNavOpen = open;
+    mobileNav.classList.toggle('open', open);
+    burger.classList.toggle('open', open);
+    document.body.classList.toggle('no-scroll', open);
+    updateHeaderState();
+  }
+  burger.addEventListener('click', function(){ setMobileNav(!mobileNav.classList.contains('open')); });
+  mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMobileNav(false); }); });
+
+  /* ===================== FAQ ACCORDION ===================== */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    function setState(open){
+      item.classList.toggle('open', open);
+      a.style.maxHeight = open ? a.scrollHeight+'px' : '0px';
+    }
+    setState(item.classList.contains('open'));
+    q.addEventListener('click', function(){ setState(!item.classList.contains('open')); });
+  });
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('.faq-item.open .faq-a').forEach(function(a){ a.style.maxHeight = a.scrollHeight+'px'; });
+  });
+
+  /* ===================== FEATURE CARD TOGGLE ===================== */
+  document.querySelectorAll('.feature-toggle').forEach(function(btn){
+    var body = btn.nextElementSibling;
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      body.style.maxHeight = open ? '0px' : body.scrollHeight+'px';
+    });
+  });
+
+  /* ===================== TOAST ===================== */
+  var toast = document.getElementById('toast');
+  var toastText = document.getElementById('toastText');
+  var toastTimer;
+  function showToast(msg){
+    toastText.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2600);
+  }
+
+  /* ===================== CART ===================== */
+  var cart = [];
+  try{
+    var saved = JSON.parse(localStorage.getItem('vns_cart') || '[]');
+    if(Array.isArray(saved)) cart = saved;
+  }catch(e){ cart = []; }
+
+  var cartDrawer = document.getElementById('cartDrawer');
+  var overlay = document.getElementById('overlay');
+  var cartItemsEl = document.getElementById('cartItems');
+  var cartFoot = document.getElementById('cartFoot');
+  var cartTotalEl = document.getElementById('cartTotal');
+  var cartBadge = document.getElementById('cartBadge');
+
+  function persistCart(){ try{ localStorage.setItem('vns_cart', JSON.stringify(cart)); }catch(e){} }
+
+  function addToCart(product, qty){
+    qty = qty || 1;
+    var existing = cart.find(function(i){ return i.id === product.id; });
+    if(existing){ existing.qty += qty; }
+    else{ cart.push({id:product.id, name:product.name, price:product.price, qty:qty}); }
+    persistCart();
+    renderCart();
+    showToast('Добавлено в корзину');
+  }
+
+  function removeFromCart(id){
+    cart = cart.filter(function(i){ return i.id !== id; });
+    persistCart(); renderCart();
+  }
+
+  function changeQty(id, delta){
+    var it = cart.find(function(i){ return i.id === id; });
+    if(!it) return;
+    it.qty += delta;
+    if(it.qty <= 0){ removeFromCart(id); return; }
+    persistCart(); renderCart();
+  }
+
+  function fmt(n){ return n.toLocaleString('ru-RU')+' ₽'; }
+
+  function renderCart(){
+    var total = cart.reduce(function(s,i){ return s + i.price*i.qty; }, 0);
+    var count = cart.reduce(function(s,i){ return s + i.qty; }, 0);
+    cartBadge.textContent = count;
+    cartBadge.classList.toggle('show', count > 0);
+
+    if(cart.length === 0){
+      cartItemsEl.innerHTML = '<div class="cart-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg><p>Корзина пуста.<br>Загляните в каталог за примером товара.</p></div>';
+      cartFoot.style.display = 'none';
+      return;
+    }
+    cartFoot.style.display = 'block';
+    cartItemsEl.innerHTML = '';
+    cart.forEach(function(item){
+      var product = productsById[item.id];
+      var row = document.createElement('div');
+      row.className = 'cart-row';
+      row.innerHTML =
+        '<div class="thumb'+(product && product.image ? '' : ' night')+'">'+(product && product.image ? '<img src="'+product.image+'" alt="">' : '<canvas></canvas>')+'</div>'+
+        '<div class="info">'+
+          '<span class="name">'+item.name+'</span>'+
+          '<span class="p">'+fmt(item.price)+'</span>'+
+          '<div class="qty-stepper">'+
+            '<button data-dec>−</button><span>'+item.qty+'</span><button data-inc>+</button>'+
+          '</div>'+
+        '</div>';
+      var removeBtn = document.createElement('button');
+      removeBtn.className = 'remove'; removeBtn.textContent = 'Удалить';
+      row.querySelector('.info').appendChild(removeBtn);
+      cartItemsEl.appendChild(row);
+      if(!(product && product.image)){
+        StarField(row.querySelector('canvas'), {density:0.0008, maxRadius:1.3, colors: product ? product.colors : undefined});
+      }
+      row.querySelector('[data-inc]').addEventListener('click', function(){ changeQty(item.id, 1); });
+      row.querySelector('[data-dec]').addEventListener('click', function(){ changeQty(item.id, -1); });
+      removeBtn.addEventListener('click', function(){ removeFromCart(item.id); });
+    });
+    cartTotalEl.textContent = fmt(total);
+  }
+  renderCart();
+
+  function openCart(){ cartDrawer.classList.add('open'); overlay.classList.add('open'); }
+  function closeCart(){ cartDrawer.classList.remove('open'); overlay.classList.remove('open'); }
+  document.getElementById('cartBtn').addEventListener('click', openCart);
+  document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
+  overlay.addEventListener('click', function(){ closeCart(); closeModal(productModal); closeModal(checkoutModal); });
+
+  /* ===================== PRODUCT / CHECKOUT MODALS ===================== */
+  var productModal = document.getElementById('productModal');
+  var checkoutModal = document.getElementById('checkoutModal');
+
+  function openModal(modal){
+    modal.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(modal){
+    modal.classList.remove('open');
+    if(!cartDrawer.classList.contains('open')) overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-close-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      closeModal(productModal); closeModal(checkoutModal);
+      if(!cartDrawer.classList.contains('open')){ overlay.classList.remove('open'); }
+    });
+  });
+
+  productGrid.addEventListener('click', function(e){
+    var card = e.target.closest('.card');
+    if(!card) return;
+    var product = productsById[card.getAttribute('data-id')];
+    if(!product) return;
+    var addBtn = e.target.closest('[data-add]');
+    if(addBtn){
+      addToCart(product, 1);
+      return;
+    }
+    openProductModal(product);
+  });
+
+  document.getElementById('modalAddBtn').addEventListener('click', function(){
+    if(currentModalProduct){ addToCart(currentModalProduct, 1); }
+    closeModal(productModal);
+    overlay.classList.remove('open');
+  });
+
+  document.getElementById('checkoutBtn').addEventListener('click', function(){
+    document.getElementById('checkoutFormWrap').style.display = 'block';
+    document.getElementById('checkoutSuccess').style.display = 'none';
+    openModal(checkoutModal);
+  });
+
+  document.getElementById('checkoutForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var name    = form.co_name.value.trim();
+    var phone   = form.co_phone.value.trim();
+    var address = form.co_address.value.trim();
+    var email   = form.co_email.value.trim();
+    var comment = form.co_comment.value.trim();
+
+    var total = cart.reduce(function(s,i){ return s + i.price*i.qty; }, 0);
+    var lines = cart.map(function(i){
+      return '• ' + i.name + ' × ' + i.qty + ' = ' + (i.price*i.qty) + ' руб.';
+    }).join('\n');
+
+    var W3F_KEY = '361c9bef-988a-429f-9791-3eaa4542db55';
+
+    var _a = Math.floor(Math.random()*9)+1;
+    var _b = Math.floor(Math.random()*9)+1;
+    document.getElementById('captchaLabel').textContent = 'Сколько будет ' + _a + ' + ' + _b + '?';
+    document.getElementById('captchaInput').value = '';
+    document.getElementById('captchaError').style.display = 'none';
+    document.getElementById('checkoutSubmitBtn').style.display = 'none';
+    document.getElementById('captchaStep').style.display = 'block';
+    document.getElementById('captchaInput').focus();
+
+    document.getElementById('captchaConfirmBtn').onclick = function() {
+      var ans = parseInt(document.getElementById('captchaInput').value, 10);
+      if (ans !== _a + _b) {
+        document.getElementById('captchaError').style.display = 'block';
+        _a = Math.floor(Math.random()*9)+1;
+        _b = Math.floor(Math.random()*9)+1;
+        document.getElementById('captchaLabel').textContent = 'Сколько будет ' + _a + ' + ' + _b + '?';
+        document.getElementById('captchaInput').value = '';
+        document.getElementById('captchaInput').focus();
+        return;
+      }
+      var orderBody = '=== СОСТАВ ЗАКАЗА ===\n' + lines + '\n\nИТОГО: ' + total.toLocaleString('ru') + ' руб.';
+      var fullMessage = 'Имя: ' + name + '\nТелефон: ' + phone + '\nEmail: ' + email +
+        '\nАдрес: ' + address + (comment ? '\nКомментарий: ' + comment : '') +
+        '\n\n' + orderBody;
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: W3F_KEY,
+          subject: 'Новый заказ — ' + name + ' — ' + total.toLocaleString('ru') + ' руб.',
+          from_name: 'VOLOKNOSTARS Сайт',
+          message: fullMessage
+        })
+      }).catch(function(){});
+
+      document.getElementById('captchaStep').style.display = 'none';
+      document.getElementById('checkoutSubmitBtn').style.display = '';
+      document.getElementById('checkoutFormWrap').style.display = 'none';
+      document.getElementById('checkoutSuccess').style.display = 'block';
+      cart = [];
+      persistCart();
+      renderCart();
+      setTimeout(function(){
+        closeModal(checkoutModal);
+        closeCart();
+        form.reset();
+      }, 3000);
+    };
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var name = form.querySelector('[name=name]').value.trim();
+    var phone = form.querySelector('[name=phone]').value.trim();
+    var message = form.querySelector('[name=message]').value.trim();
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        access_key: '361c9bef-988a-429f-9791-3eaa4542db55',
+        subject: 'Новая заявка — ' + name,
+        from_name: 'VOLOKNOSTARS Сайт',
+        message: 'Имя: ' + name + '\nТелефон: ' + phone + '\nСообщение: ' + (message || '—')
+      })
+    }).catch(function(){});
+    showToast('Заявка отправлена — мы свяжемся с вами');
+    form.reset();
+  });
+
+  /* ===================== CONSTRUCTOR ===================== */
+  (function(){
+    var PRICES = {
+      constant: {75:12150,100:13350,150:16500,200:20250,300:31650,400:41100,500:49200},
+      flicker:  {75:26100,100:27345,150:29900,200:34200,300:45525,400:55125,500:63270},
+      rgb:      {75:43050,100:44250,150:46800,200:51150,300:62520,400:72000,500:80175}
+    };
+    var EFFECT_LABELS = {constant:'постоянный свет',flicker:'мерцание',rgb:'RGB смена цвета'};
+
+    function interpPrice(effect, stars){
+      var tbl = PRICES[effect];
+      var keys = Object.keys(tbl).map(Number).sort(function(a,b){return a-b;});
+      if(stars <= keys[0]) return tbl[keys[0]];
+      if(stars >= keys[keys.length-1]) return tbl[keys[keys.length-1]];
+      for(var i=0;i<keys.length-1;i++){
+        if(stars >= keys[i] && stars <= keys[i+1]){
+          var t = (stars - keys[i]) / (keys[i+1] - keys[i]);
+          return Math.round(tbl[keys[i]] + t*(tbl[keys[i+1]] - tbl[keys[i]]));
+        }
+      }
+      return tbl[keys[0]];
+    }
+
+    var starsRange   = document.getElementById('ctorStars');
+    var starsVal     = document.getElementById('ctorStarsVal');
+    var effectChips  = document.querySelectorAll('#ctorEffectChips .ctor-chip');
+    var priceEl      = document.getElementById('ctorPrice');
+    var specEl       = document.getElementById('ctorSpec');
+    var addBtn       = document.getElementById('ctorAddBtn');
+    var state = {stars:150, effect:'constant'};
+
+    /* ---------- chip helpers ---------- */
+    function chipClick(chips, key, fn){
+      chips.forEach(function(c){
+        c.addEventListener('click', function(){
+          chips.forEach(function(x){x.classList.remove('active');});
+          c.classList.add('active');
+          state[key] = fn(c);
+          update();
+        });
+      });
+    }
+    chipClick(effectChips, 'effect', function(c){return c.dataset.effect;});
+
+    starsRange.addEventListener('input', function(){
+      state.stars = parseInt(this.value);
+      starsVal.textContent = state.stars;
+      update();
+    });
+
+    /* ---------- price & spec update ---------- */
+    function update(){
+      var total = interpPrice(state.effect, state.stars);
+      priceEl.textContent = 'от ' + total.toLocaleString('ru') + ' ₽';
+      specEl.textContent = state.stars + ' звёзд · ' + EFFECT_LABELS[state.effect];
+    }
+
+    /* ---------- add to cart ---------- */
+    addBtn.addEventListener('click', function(){
+      var total = interpPrice(state.effect, state.stars);
+      var comment = (document.getElementById('ctorComment').value || '').trim();
+      var name = 'Конструктор: ' + state.stars + ' звёзд, ' + EFFECT_LABELS[state.effect] +
+        (comment ? ' [' + comment + ']' : '');
+      var id = 'ctor_' + state.stars + '_' + state.effect;
+      var item = {id:id, name:name, price:total, qty:1, image:'', isCustom:true};
+      var existing = cart.find(function(c){return c.id===id;});
+      if(existing){ existing.qty++; } else { cart.push(item); }
+      persistCart(); renderCart();
+      showToast('Добавлено в корзину');
+    });
+
+    update();
+  })();
+
+  /* ===================== ESC TO CLOSE ===================== */
+  window.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closeCart(); closeModal(productModal); closeModal(checkoutModal); setMobileNav(false);
+    }
+  });
+
+  /* ===================== FOOTER YEAR ===================== */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>
